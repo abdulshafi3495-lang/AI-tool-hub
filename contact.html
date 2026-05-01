@@ -15,6 +15,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Open Graph SEO -->
   <meta property="og:type" content="website" />
@@ -37,6 +38,15 @@
   <!-- Theme -->
   <meta name="theme-color" content="#101828" />
 
+
+  <!-- Technical SEO / Performance -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.gstatic.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
@@ -52,7 +62,7 @@
       "@type": "Organization",
       "name": "AI Tools Hub",
       "url": "https://ai-tools-hub-pk.netlify.app/",
-      "email": "support@aitoolshub.com",
+      "email": "arkhokar7@gmail.com",
       "areaServed": "Worldwide"
     }
   }
@@ -69,7 +79,7 @@
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer support",
-      "email": "support@aitoolshub.com",
+      "email": "arkhokar7@gmail.com",
       "availableLanguage": ["English", "Urdu"]
     }
   }
@@ -130,6 +140,22 @@
     ]
   }
   </script>
+
+  <!-- Structured Data: Tool Submission Action -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Submit AI Tool for Review",
+    "url": "https://ai-tools-hub-pk.netlify.app/contact.html",
+    "potentialAction": {
+      "@type": "SendAction",
+      "name": "Submit an AI tool",
+      "target": "https://ai-tools-hub-pk.netlify.app/contact.html#contactForm"
+    }
+  }
+  </script>
+
 </head>
 
 <body>
@@ -155,9 +181,12 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="tools.html" class="nav-link">Tools</a>
         <a href="categories.html" class="nav-link">Categories</a>
+        <a href="prompt-library.html" class="nav-link">Prompts</a>
+        <a href="free-tools.html" class="nav-link">Free Tools</a>
+        <a href="compare-tools.html" class="nav-link">Compare</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="#contactForm" class="nav-cta">Send Message</a>
+        <a href="contact.html" class="nav-link" aria-current="page">Contact</a>
+        <a href="index.html#tool-finder" class="nav-cta">Tool Finder</a>
       </div>
     </nav>
   </header>
@@ -297,6 +326,56 @@
               <option value="General Question">General Question</option>
             </select>
             <small class="error-message"></small>
+          </div>
+
+
+          <div class="tool-submission-fields" id="toolSubmissionFields" hidden>
+            <div class="form-group">
+              <label for="toolName">Tool Name</label>
+              <input type="text" id="toolName" name="toolName" placeholder="Example: Canva, ChatGPT, VidIQ" />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="toolUrl">Official Tool URL</label>
+              <input type="url" id="toolUrl" name="toolUrl" placeholder="https://example.com" inputmode="url" />
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="toolCategory">Tool Category</label>
+              <select id="toolCategory" name="toolCategory">
+                <option value="">Select category</option>
+                <option>AI Content Creation</option>
+                <option>Digital Marketing &amp; SEO</option>
+                <option>Graphic Design</option>
+                <option>Content Creation / YouTube</option>
+                <option>Education &amp; Research</option>
+                <option>Freelancing Platforms</option>
+                <option>E-commerce</option>
+                <option>Web Development</option>
+                <option>Automation / No-Code</option>
+              </select>
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="toolPricing">Pricing Type</label>
+              <select id="toolPricing" name="toolPricing">
+                <option value="">Select pricing</option>
+                <option>Free</option>
+                <option>Freemium</option>
+                <option>Trial/Paid</option>
+                <option>Paid</option>
+              </select>
+              <small class="error-message"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="targetUsers">Best For</label>
+              <input type="text" id="targetUsers" name="targetUsers" placeholder="Students, shopkeepers, YouTubers, freelancers..." />
+              <small class="error-message"></small>
+            </div>
           </div>
 
           <div class="form-group">
@@ -441,6 +520,9 @@
         <a href="tools.html">AI Tools Directory</a>
         <a href="categories.html">AI Tool Categories</a>
         <a href="blog.html">AI Tools Blog</a>
+        <a href="prompt-library.html">Prompt Library</a>
+        <a href="free-tools.html">Free Mini Tools</a>
+        <a href="compare-tools.html">Compare AI Tools</a>
         <a href="contact.html">Contact AI Tools Hub</a>
       </div>
 

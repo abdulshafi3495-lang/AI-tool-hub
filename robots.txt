@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://ai-tools-hub-pk.netlify.app/sitemap.xml

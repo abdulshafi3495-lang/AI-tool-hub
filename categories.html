@@ -15,6 +15,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Open Graph SEO -->
   <meta property="og:type" content="website" />
@@ -36,6 +37,15 @@
 
   <!-- Theme -->
   <meta name="theme-color" content="#101828" />
+
+
+  <!-- Technical SEO / Performance -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.gstatic.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -152,10 +162,13 @@
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="tools.html" class="nav-link">Tools</a>
-        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="categories.html" class="nav-link" aria-current="page">Categories</a>
+        <a href="prompt-library.html" class="nav-link">Prompts</a>
+        <a href="free-tools.html" class="nav-link">Free Tools</a>
+        <a href="compare-tools.html" class="nav-link">Compare</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="tools.html" class="nav-cta">Browse Tools</a>
+        <a href="index.html#tool-finder" class="nav-cta">Tool Finder</a>
       </div>
     </nav>
   </header>
@@ -336,6 +349,26 @@
       </div>
     </section>
 
+
+    <!-- Role-Based Category Links -->
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Role-Based Categories</span>
+          <h2>Find AI tools by user type</h2>
+          <p>
+            These role-based entry points support long-tail search intent and help users move
+            from a broad category to a practical workflow.
+          </p>
+        </div>
+        <div class="category-grid">
+          <article class="category-card reveal"><div class="category-icon" aria-hidden="true">🎓</div><h3>AI Tools for Students</h3><p>Research, assignments, notes, citations, presentations and exam preparation workflows.</p><a href="index.html#tool-finder" class="text-link">Open student finder</a></article>
+          <article class="category-card reveal"><div class="category-icon" aria-hidden="true">🛍️</div><h3>AI Tools for Shopkeepers</h3><p>Product descriptions, invoices, WhatsApp marketing, customer replies and Facebook ad copy.</p><a href="index.html#tool-finder" class="text-link">Open shopkeeper finder</a></article>
+          <article class="category-card reveal"><div class="category-icon" aria-hidden="true">▶️</div><h3>AI Tools for YouTubers</h3><p>Script writing, title generation, thumbnail planning, captions, editing and channel growth.</p><a href="index.html#tool-finder" class="text-link">Open YouTube finder</a></article>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="section-padding">
       <div class="container faq-section reveal">
@@ -424,6 +457,9 @@
         <a href="tools.html">AI Tools Directory</a>
         <a href="categories.html">AI Tool Categories</a>
         <a href="blog.html">AI Tools Blog</a>
+        <a href="prompt-library.html">Prompt Library</a>
+        <a href="free-tools.html">Free Mini Tools</a>
+        <a href="compare-tools.html">Compare AI Tools</a>
       </div>
 
       <div>

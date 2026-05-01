@@ -1,0 +1,9 @@
+{
+  "name": "AI Tools Hub",
+  "short_name": "AI Tools Hub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080d18",
+  "theme_color": "#101828",
+  "description": "AI tool finder, prompt library, free mini tools and comparison hub."
+}

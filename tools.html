@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>200+ AI Tools Directory | Free and Paid Tools by Skill</title>
-  <meta name="description" content="Explore 200+ free and paid AI tools, websites and software for digital marketing, SEO, graphic design, content creation, web development, app development, video editing, data analysis, cyber security, cloud computing, freelancing and e-commerce." />
+  <title>357+ AI Tools Directory | Search, Filter and Compare Free AI Tools</title>
+  <meta name="description" content="Explore 357+ free and paid AI tools with search, filters, practical use steps and comparison support for students, shopkeepers, freelancers, YouTubers, developers, marketers and small businesses." />
   <meta name="keywords" content="AI tools directory, free AI tools, paid AI tools, digital marketing tools, SEO tools, graphic design tools, web development tools, app development tools, video editing tools, data analysis tools, cyber security tools, freelancing tools, e-commerce tools" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/tools.html" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
 
   <!-- Open Graph SEO -->
   <meta property="og:type" content="website" />
@@ -28,6 +29,15 @@
 
   <!-- Theme -->
   <meta name="theme-color" content="#101828" />
+
+
+  <!-- Technical SEO / Performance -->
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.gstatic.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -1042,9 +1052,12 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="tools.html" class="nav-link" aria-current="page">Tools</a>
         <a href="categories.html" class="nav-link">Categories</a>
+        <a href="prompt-library.html" class="nav-link">Prompts</a>
+        <a href="free-tools.html" class="nav-link">Free Tools</a>
+        <a href="compare-tools.html" class="nav-link">Compare</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="contact.html" class="nav-cta">Submit Tool</a>
+        <a href="index.html#tool-finder" class="nav-cta">Tool Finder</a>
       </div>
     </nav>
   </header>
@@ -1279,6 +1292,15 @@
           </p>
         </div>
         <div class="tool-grid large-tool-grid" id="toolsGrid" aria-live="polite"></div>
+
+        <div class="compare-selection-bar" id="compareSelectionBar" hidden>
+          <strong id="compareSelectionCount">0 tools selected for comparison</strong>
+          <div class="compare-selection-actions">
+            <button class="btn btn-outline small-btn" type="button" id="clearCompareSelection">Clear</button>
+            <a class="btn btn-primary small-btn" href="compare-tools.html" id="openCompareSelection">Compare Selected</a>
+          </div>
+        </div>
+
         <p class="empty-state" id="toolsEmptyState">No tools match your search or selected filters.</p>
       </div>
     </section>
@@ -1354,6 +1376,9 @@
         <a href="tools.html">AI Tools Directory</a>
         <a href="categories.html">AI Tool Categories</a>
         <a href="blog.html">AI Tools Blog</a>
+        <a href="prompt-library.html">Prompt Library</a>
+        <a href="free-tools.html">Free Mini Tools</a>
+        <a href="compare-tools.html">Compare AI Tools</a>
         <a href="contact.html">Contact</a>
       </div>
       <div>
@@ -1368,6 +1393,7 @@
         <a href="contact.html">Submit AI Tool</a>
         <a href="contact.html">Report Issue</a>
         <a href="blog.html">AI Guides and Updates</a>
+        <a href="prompt-library.html">Copy Ready Prompts</a>
       </div>
     </div>
     <div class="footer-bottom container">
@@ -1405,6 +1431,10 @@
         const summaryCards = Array.from(document.querySelectorAll("[data-scroll-filter]"));
         const guideCards = Array.from(document.querySelectorAll("[data-guide-action]"));
         const toolsPanel = document.querySelector(".tools-panel");
+        const compareSelectionBar = document.getElementById("compareSelectionBar");
+        const compareSelectionCount = document.getElementById("compareSelectionCount");
+        const openCompareSelection = document.getElementById("openCompareSelection");
+        const clearCompareSelection = document.getElementById("clearCompareSelection");
 
         const modal = document.getElementById("stepsModal");
         const modalClose = document.getElementById("stepsModalClose");
@@ -1416,6 +1446,7 @@
         const modalVisit = document.getElementById("stepsModalVisit");
 
         let activeCategory = "all";
+        const selectedCompareTools = new Map();
 
         function normalize(value) {
           return String(value || "").toLowerCase().trim();
@@ -1458,6 +1489,7 @@
               <div class="tool-meta"><span>${escapeHTML(tool.level)}</span><span>${escapeHTML(tool.category)}</span></div>
               <div class="rating"><span class="stars">${stars(tool.score)}</span> <span>Hub score ${escapeHTML(tool.score)}</span></div>
               <div class="tool-actions">
+                <label class="compare-toggle"><input type="checkbox" data-compare-tool="${index}" aria-label="Compare ${escapeHTML(tool.name)}"> Compare</label>
                 <button class="btn btn-outline small-btn" type="button" data-use-steps="${index}">Use Steps</button>
                 <a class="btn btn-primary small-btn" href="${escapeHTML(tool.url)}" target="_blank" rel="noopener noreferrer">Open Tool ↗</a>
               </div>
@@ -1511,6 +1543,22 @@
               : `Showing ${visible.length} of ${total} tools.`;
           }
 
+        }
+
+
+        function updateCompareBar() {
+          const selected = Array.from(selectedCompareTools.values());
+          if (!compareSelectionBar || !compareSelectionCount || !openCompareSelection) return;
+          compareSelectionBar.hidden = selected.length === 0;
+          compareSelectionCount.textContent = `${selected.length} tool${selected.length === 1 ? "" : "s"} selected for comparison`;
+          const ids = selected.map((tool) => tool.id).join(",");
+          openCompareSelection.href = selected.length ? `compare-tools.html?ids=${encodeURIComponent(ids)}` : "compare-tools.html";
+        }
+
+        function clearComparisonSelection() {
+          selectedCompareTools.clear();
+          document.querySelectorAll("[data-compare-tool]").forEach((checkbox) => { checkbox.checked = false; });
+          updateCompareBar();
         }
 
         function scrollToPanel() {
@@ -1638,6 +1686,29 @@
             }
           });
         });
+
+
+        document.addEventListener("change", function (event) {
+          const checkbox = event.target.closest("[data-compare-tool]");
+          if (!checkbox) return;
+          const tool = TOOLS_DATA[Number(checkbox.dataset.compareTool)];
+          if (!tool) return;
+          if (checkbox.checked) {
+            if (selectedCompareTools.size >= 3) {
+              checkbox.checked = false;
+              showNotice("<strong>Comparison limit:</strong> Select up to 3 tools for a clean comparison table.");
+              return;
+            }
+            selectedCompareTools.set(tool.id, tool);
+          } else {
+            selectedCompareTools.delete(tool.id);
+          }
+          updateCompareBar();
+        });
+
+        if (clearCompareSelection) {
+          clearCompareSelection.addEventListener("click", clearComparisonSelection);
+        }
 
         document.addEventListener("click", function (event) {
           const stepButton = event.target.closest("[data-use-steps]");

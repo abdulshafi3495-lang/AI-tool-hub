@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | AI Tools Hub</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top"><nav class="navbar container" aria-label="Admin navigation"><a href="index.html" class="brand"><span class="brand-mark">AI</span><span>AI Tools Hub Admin</span></a><a href="index.html" class="nav-cta">Back to Site</a></nav></header>
+  <main>
+    <section class="page-hero section-padding-sm"><div class="container reveal"><span class="eyebrow">Firebase Admin</span><h1>Tool Submission Approval Dashboard</h1><p>Sign in with Firebase Auth, review pending submissions from Firestore, then approve or reject tools.</p></div></section>
+    <section class="section-padding-sm"><div class="container admin-grid"><form class="contact-form" id="adminLoginForm"><h2>Admin Sign In</h2><div class="form-group"><label for="adminEmail">Email</label><input type="email" id="adminEmail" autocomplete="email" /></div><div class="form-group"><label for="adminPassword">Password</label><input type="password" id="adminPassword" autocomplete="current-password" /></div><button class="btn btn-primary full-btn" type="submit">Sign In</button><p class="form-message" id="adminAuthMessage"></p></form><div class="tools-panel"><h2>Pending Submissions</h2><p>Use Firestore security rules so only admin users can read and update submissions.</p><div class="admin-submission-list" id="adminSubmissionList"><p class="empty-state" style="display:block">Sign in to load submissions.</p></div></div></div></section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
