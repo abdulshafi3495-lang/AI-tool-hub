@@ -123,6 +123,63 @@
     ]
   }
   </script>
+
+  <!-- Interactive Tools Page Helpers -->
+  <style>
+    .mini-summary-card,
+    .guide-action-card {
+      cursor: pointer;
+    }
+
+    .mini-summary-card:focus,
+    .guide-action-card:focus {
+      outline: 2px solid rgba(56, 189, 248, 0.95);
+      outline-offset: 4px;
+    }
+
+    .quick-action-notice {
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 1rem;
+      background: rgba(15, 23, 42, 0.72);
+      color: #dbeafe;
+      line-height: 1.6;
+    }
+
+    .quick-action-notice strong {
+      color: #ffffff;
+    }
+
+    .quick-action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.9rem;
+    }
+
+    .quick-action-button {
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.14);
+      color: #e0f2fe;
+      cursor: pointer;
+      font: inherit;
+      padding: 0.55rem 0.9rem;
+    }
+
+    .quick-action-button:hover,
+    .quick-action-button:focus {
+      background: rgba(59, 130, 246, 0.28);
+      outline: none;
+    }
+
+    .action-highlight {
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.45);
+      transition: box-shadow 0.25s ease;
+    }
+  </style>
+
 </head>
 <body>
   <header class="site-header" id="top">
@@ -152,31 +209,31 @@
         </p>
 
         <div class="tools-overview" aria-label="Tool library summary">
-          <div class="mini-summary-card" data-scroll-filter="web-dev">
+          <div class="mini-summary-card" data-scroll-filter="web-dev" role="button" tabindex="0" aria-label="Show web-dev tools">
             <strong>10</strong>
             <span>Web Development</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="digital-marketing">
+          <div class="mini-summary-card" data-scroll-filter="digital-marketing" role="button" tabindex="0" aria-label="Show digital-marketing tools">
             <strong>10</strong>
             <span>Digital Marketing</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="english-text">
+          <div class="mini-summary-card" data-scroll-filter="english-text" role="button" tabindex="0" aria-label="Show english-text tools">
             <strong>8</strong>
             <span>English Text</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="urdu-text">
+          <div class="mini-summary-card" data-scroll-filter="urdu-text" role="button" tabindex="0" aria-label="Show urdu-text tools">
             <strong>8</strong>
             <span>Urdu Text</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="video-creation">
+          <div class="mini-summary-card" data-scroll-filter="video-creation" role="button" tabindex="0" aria-label="Show video-creation tools">
             <strong>10</strong>
             <span>Video Creation</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="design-image">
+          <div class="mini-summary-card" data-scroll-filter="design-image" role="button" tabindex="0" aria-label="Show design-image tools">
             <strong>8</strong>
             <span>Design &amp; Image</span>
           </div>
-          <div class="mini-summary-card" data-scroll-filter="data-research">
+          <div class="mini-summary-card" data-scroll-filter="data-research" role="button" tabindex="0" aria-label="Show data-research tools">
             <strong>6</strong>
             <span>Data &amp; Research</span>
           </div>
@@ -221,25 +278,25 @@
         </div>
 
         <div class="tool-grid">
-          <article class="tool-card reveal">
+          <article class="tool-card reveal guide-action-card" data-guide-action="search" role="button" tabindex="0" aria-label="Search AI tools by task">
             <div class="tool-icon" aria-hidden="true">🔎</div>
             <h3>Search by task</h3>
             <p>Use keywords such as SEO, coding, Urdu, video, grammar, design or research.</p>
           </article>
 
-          <article class="tool-card reveal">
+          <article class="tool-card reveal guide-action-card" data-guide-action="pricing" role="button" tabindex="0" aria-label="Compare AI tools by pricing">
             <div class="tool-icon" aria-hidden="true">🏷️</div>
             <h3>Compare pricing</h3>
             <p>Check whether a tool is free, freemium, paid or trial-based before opening it.</p>
           </article>
 
-          <article class="tool-card reveal">
+          <article class="tool-card reveal guide-action-card" data-guide-action="level" role="button" tabindex="0" aria-label="Match AI tools by skill level">
             <div class="tool-icon" aria-hidden="true">📚</div>
             <h3>Match your level</h3>
             <p>Select basic tools for learning and advanced tools for professional workflows.</p>
           </article>
 
-          <article class="tool-card reveal">
+          <article class="tool-card reveal guide-action-card" data-guide-action="verify" role="button" tabindex="0" aria-label="Verify official AI tool pages">
             <div class="tool-icon" aria-hidden="true">✅</div>
             <h3>Verify official pages</h3>
             <p>Use the Open Tool button to visit the official website and confirm latest details.</p>
@@ -1345,5 +1402,431 @@
 
   <!-- Main Website Script -->
   <script src="script.js"></script>
+
+  <!-- Tools Page Interaction Fix -->
+  <script>
+    (function () {
+      function ready(callback) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", callback);
+        } else {
+          callback();
+        }
+      }
+
+      ready(function () {
+        const toolsPanel = document.querySelector(".tools-panel");
+        const toolsGrid = document.getElementById("toolsGrid");
+        const searchInput = document.getElementById("toolSearch");
+        const sortSelect = document.getElementById("toolSort");
+        const emptyState = document.getElementById("toolsEmptyState");
+        const chips = Array.from(document.querySelectorAll(".chip[data-filter]"));
+        const summaryCards = Array.from(document.querySelectorAll("[data-scroll-filter]"));
+        const guideCards = Array.from(document.querySelectorAll("[data-guide-action]"));
+
+        const modal = document.getElementById("toolModal");
+        const modalClose = document.getElementById("modalClose");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalText = document.getElementById("modalText");
+        const modalMeta = document.getElementById("modalMeta");
+        const modalVisit = document.getElementById("modalVisit");
+        const modalGroup = document.getElementById("modalGroup");
+
+        if (!toolsGrid || !searchInput || !sortSelect) return;
+
+        const cards = Array.from(toolsGrid.querySelectorAll(".detailed-tool"));
+        cards.forEach((card, index) => {
+          card.dataset.originalIndex = String(index);
+        });
+
+        let activeCategory = "all";
+        let levelQuery = "";
+        let pricingQuery = "";
+
+        function normalize(value) {
+          return String(value || "").toLowerCase().trim();
+        }
+
+        function cardSearchText(card) {
+          return [
+            card.dataset.title,
+            card.dataset.category,
+            card.dataset.group,
+            card.dataset.pricing,
+            card.dataset.level,
+            card.dataset.summary,
+            card.textContent
+          ].map(normalize).join(" ");
+        }
+
+        function setActiveChip(category) {
+          activeCategory = category || "all";
+          chips.forEach((chip) => {
+            chip.classList.toggle("active", chip.dataset.filter === activeCategory);
+          });
+        }
+
+        function showNotice(message, buttons) {
+          let notice = document.getElementById("toolsActionNotice");
+
+          if (!notice && toolsPanel) {
+            notice = document.createElement("div");
+            notice.id = "toolsActionNotice";
+            notice.className = "quick-action-notice";
+            toolsPanel.appendChild(notice);
+          }
+
+          if (!notice) return;
+
+          notice.innerHTML = message;
+
+          if (Array.isArray(buttons) && buttons.length) {
+            const buttonWrap = document.createElement("div");
+            buttonWrap.className = "quick-action-buttons";
+
+            buttons.forEach((buttonConfig) => {
+              const button = document.createElement("button");
+              button.type = "button";
+              button.className = "quick-action-button";
+              button.textContent = buttonConfig.label;
+              button.addEventListener("click", buttonConfig.onClick);
+              buttonWrap.appendChild(button);
+            });
+
+            notice.appendChild(buttonWrap);
+          }
+        }
+
+        function clearTemporaryHighlights() {
+          document.querySelectorAll(".action-highlight").forEach((element) => {
+            element.classList.remove("action-highlight");
+          });
+        }
+
+        function highlightElements(selector) {
+          clearTemporaryHighlights();
+          document.querySelectorAll(selector).forEach((element) => {
+            element.classList.add("action-highlight");
+          });
+
+          window.setTimeout(clearTemporaryHighlights, 2600);
+        }
+
+        function sortVisibleCards(visibleCards) {
+          const sortValue = sortSelect.value;
+
+          visibleCards.sort((a, b) => {
+            if (sortValue === "name") {
+              return normalize(a.dataset.title).localeCompare(normalize(b.dataset.title));
+            }
+
+            if (sortValue === "rating") {
+              return Number(b.dataset.rating || 0) - Number(a.dataset.rating || 0);
+            }
+
+            return Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+          });
+
+          visibleCards.forEach((card) => toolsGrid.appendChild(card));
+        }
+
+        function applyFilters() {
+          const query = normalize(searchInput.value);
+          const visibleCards = [];
+
+          cards.forEach((card) => {
+            const matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+            const text = cardSearchText(card);
+            const matchesSearch = !query || text.includes(query);
+            const matchesLevel = !levelQuery || normalize(card.dataset.level).includes(levelQuery);
+            const matchesPricing = !pricingQuery || normalize(card.dataset.pricing).includes(pricingQuery);
+
+            const shouldShow = matchesCategory && matchesSearch && matchesLevel && matchesPricing;
+
+            card.hidden = !shouldShow;
+            card.style.display = shouldShow ? "" : "none";
+
+            if (shouldShow) {
+              visibleCards.push(card);
+            }
+          });
+
+          sortVisibleCards(visibleCards);
+
+          if (emptyState) {
+            emptyState.style.display = visibleCards.length ? "none" : "block";
+          }
+        }
+
+        function scrollToToolsPanel() {
+          const target = toolsPanel || toolsGrid;
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+
+        function openCategory(category) {
+          levelQuery = "";
+          pricingQuery = "";
+          searchInput.value = "";
+          setActiveChip(category);
+          applyFilters();
+          scrollToToolsPanel();
+
+          const categoryLabel = chips.find((chip) => chip.dataset.filter === category)?.textContent || "selected category";
+          showNotice(
+            `<strong>${categoryLabel}</strong> tools are now selected. Use search or sorting to narrow the results.`
+          );
+        }
+
+        function openDetails(card) {
+          if (!modal || !modalTitle || !modalText || !modalVisit || !modalMeta) return;
+
+          const title = card.dataset.title || card.querySelector("h3")?.textContent || "Tool details";
+          const summary = card.dataset.summary || card.querySelector("p")?.textContent || "Tool details are not available.";
+          const url = card.dataset.url || "#";
+          const group = card.dataset.group || "Tool details";
+          const pricing = card.dataset.pricing || "Pricing not listed";
+          const level = card.dataset.level || "Level not listed";
+          const rating = card.dataset.rating || "Not rated";
+
+          modalTitle.textContent = title;
+          modalText.textContent = summary;
+          if (modalGroup) modalGroup.textContent = group;
+          modalVisit.href = url;
+          modalMeta.innerHTML = `
+            <span>${pricing}</span>
+            <span>${level}</span>
+            <span>Hub score ${rating}</span>
+          `;
+
+          modal.setAttribute("aria-hidden", "false");
+          modal.classList.add("active");
+          document.body.classList.add("modal-open");
+        }
+
+        function closeDetails() {
+          if (!modal) return;
+          modal.setAttribute("aria-hidden", "true");
+          modal.classList.remove("active");
+          document.body.classList.remove("modal-open");
+        }
+
+        // Search, category chips and sort
+        searchInput.addEventListener("input", function () {
+          levelQuery = "";
+          pricingQuery = "";
+          applyFilters();
+        });
+
+        sortSelect.addEventListener("change", applyFilters);
+
+        chips.forEach((chip) => {
+          chip.addEventListener("click", function () {
+            levelQuery = "";
+            pricingQuery = "";
+            searchInput.value = "";
+            setActiveChip(chip.dataset.filter || "all");
+            applyFilters();
+          });
+        });
+
+        // Top summary category cards
+        summaryCards.forEach((card) => {
+          const category = card.dataset.scrollFilter;
+
+          function run() {
+            openCategory(category);
+          }
+
+          card.addEventListener("click", run);
+          card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              run();
+            }
+          });
+        });
+
+        // How-to-use cards
+        guideCards.forEach((card) => {
+          function run() {
+            const action = card.dataset.guideAction;
+
+            if (action === "search") {
+              levelQuery = "";
+              pricingQuery = "";
+              setActiveChip("all");
+              searchInput.value = "";
+              applyFilters();
+              scrollToToolsPanel();
+              window.setTimeout(() => searchInput.focus(), 450);
+              showNotice(
+                "<strong>Search by task:</strong> Type keywords such as SEO, coding, Urdu, grammar, video, image, design, research or automation."
+              );
+              return;
+            }
+
+            if (action === "pricing") {
+              levelQuery = "";
+              pricingQuery = "";
+              searchInput.value = "";
+              setActiveChip("all");
+              applyFilters();
+              scrollToToolsPanel();
+              highlightElements(".badge");
+              showNotice(
+                "<strong>Compare pricing:</strong> Pricing labels are highlighted. You can filter tools by pricing type.",
+                [
+                  {
+                    label: "Show Free tools",
+                    onClick: function () {
+                      pricingQuery = "free";
+                      levelQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  },
+                  {
+                    label: "Show Paid tools",
+                    onClick: function () {
+                      pricingQuery = "paid";
+                      levelQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  },
+                  {
+                    label: "Show All",
+                    onClick: function () {
+                      pricingQuery = "";
+                      levelQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  }
+                ]
+              );
+              return;
+            }
+
+            if (action === "level") {
+              pricingQuery = "";
+              levelQuery = "";
+              searchInput.value = "";
+              setActiveChip("all");
+              applyFilters();
+              scrollToToolsPanel();
+              showNotice(
+                "<strong>Match your level:</strong> Choose a skill level to show relevant tools.",
+                [
+                  {
+                    label: "Basic",
+                    onClick: function () {
+                      levelQuery = "basic";
+                      pricingQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  },
+                  {
+                    label: "Intermediate",
+                    onClick: function () {
+                      levelQuery = "intermediate";
+                      pricingQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  },
+                  {
+                    label: "Advanced",
+                    onClick: function () {
+                      levelQuery = "advanced";
+                      pricingQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  },
+                  {
+                    label: "Show All",
+                    onClick: function () {
+                      levelQuery = "";
+                      pricingQuery = "";
+                      searchInput.value = "";
+                      setActiveChip("all");
+                      applyFilters();
+                    }
+                  }
+                ]
+              );
+              return;
+            }
+
+            if (action === "verify") {
+              levelQuery = "";
+              pricingQuery = "";
+              searchInput.value = "";
+              setActiveChip("all");
+              applyFilters();
+              scrollToToolsPanel();
+              highlightElements(".tool-actions a[href]");
+              showNotice(
+                "<strong>Verify official pages:</strong> Use the highlighted Open Tool buttons to visit official websites in a new tab and confirm current features, prices and limits."
+              );
+            }
+          }
+
+          card.addEventListener("click", run);
+          card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              run();
+            }
+          });
+        });
+
+        // Details modal buttons
+        document.addEventListener("click", function (event) {
+          const detailButton = event.target.closest("[data-open-modal]");
+          if (!detailButton) return;
+
+          const card = detailButton.closest(".detailed-tool");
+          if (card) {
+            event.preventDefault();
+            openDetails(card);
+          }
+        });
+
+        if (modalClose) {
+          modalClose.addEventListener("click", closeDetails);
+        }
+
+        if (modal) {
+          modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+              closeDetails();
+            }
+          });
+        }
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") {
+            closeDetails();
+          }
+        });
+
+        // Initial state
+        setActiveChip("all");
+        applyFilters();
+      });
+    })();
+  </script>
+
 </body>
 </html>
