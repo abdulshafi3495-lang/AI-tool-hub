@@ -3,20 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>AI Tools Directory | Free and Paid AI Tools</title>
-<meta name="description" content="Explore free and paid AI tools for web development, digital marketing, English and Urdu writing, video creation, design and automation.">
+
+  <!-- Primary SEO -->
+  <title>AI Tools Directory | Free and Paid AI Tools for Every Task</title>
+  <meta
+    name="description"
+    content="Explore a curated directory of free and paid AI tools for web development, digital marketing, English and Urdu writing, video creation, design, research, productivity and automation."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/tools.html" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Tools Directory | Free and Paid AI Tools for Every Task" />
+  <meta
+    property="og:description"
+    content="Browse free and paid AI tools by category, pricing, skill level and use case for coding, marketing, writing, Urdu text, video creation, design and research."
+  />
+  <meta property="og:url" content="https://ai-tools-hub-pk.netlify.app/tools.html" />
+  <meta property="og:site_name" content="AI Tools Hub" />
+
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI Tools Directory | Free and Paid AI Tools" />
+  <meta
+    name="twitter:description"
+    content="Find AI tools for web development, digital marketing, English and Urdu writing, video creation, design, research and productivity."
+  />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#101828" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
- <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/tools.html" />
+
+  <!-- Structured Data: Collection Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Tools Directory",
+    "url": "https://ai-tools-hub-pk.netlify.app/tools.html",
+    "description": "A curated directory of free and paid AI tools organized by category, pricing, skill level and use case.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "AI Tools Hub",
+      "url": "https://ai-tools-hub-pk.netlify.app/"
+    },
+    "about": [
+      "AI tools",
+      "Free AI tools",
+      "Paid AI tools",
+      "Web development tools",
+      "Digital marketing tools",
+      "English writing tools",
+      "Urdu writing tools",
+      "Video creation tools",
+      "Design tools",
+      "Research tools"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ai-tools-hub-pk.netlify.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://ai-tools-hub-pk.netlify.app/tools.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is AI Tools Hub?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI Tools Hub is a curated directory that helps users discover free and paid AI tools for web development, digital marketing, writing, Urdu text, video creation, design, research and productivity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the listed AI tools free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many listed tools are free or freemium. Some tools require paid plans for advanced features, higher limits or professional usage."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should I choose an AI tool?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with your task category, compare pricing and skill level, then open the official tool website to confirm features, limits and current availability."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header" id="top">
-    <nav class="navbar container">
-      <a href="index.html" class="brand"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="AI Tools Hub Home"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="tools.html" class="nav-link" aria-current="page">Tools</a>
         <a href="categories.html" class="nav-link">Categories</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -25,12 +140,16 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="page-hero section-padding-sm">
       <div class="container reveal">
         <span class="eyebrow">Tool library</span>
-        <h1>60 working tools for AI, web, marketing, writing, Urdu text and video creation.</h1>
-        <p>Use the search bar, category chips and sorting menu to find a relevant tool. Every card has an <strong>Open Tool</strong> button that opens the official tool page in a new tab.</p>
+     <h1>Explore Free and Paid AI Tools by Task and Category</h1>
+        <p>
+          Use the search bar, category chips and sorting menu to find relevant AI tools by
+          task, category, pricing type and skill level. Every card includes an
+          <strong>Open Tool</strong> button that opens the official tool website in a new tab.
+        </p>
 
         <div class="tools-overview" aria-label="Tool library summary">
           <div class="mini-summary-card" data-scroll-filter="web-dev">
@@ -61,6 +180,70 @@
             <strong>6</strong>
             <span>Data &amp; Research</span>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-padding-sm">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Free and Paid AI Tools</span>
+      <h2>Compare AI tools by category, pricing and use case</h2>
+      <p>
+        Explore AI tools for web development, digital marketing, English writing,
+        Urdu text, video creation, image generation, research, automation and business
+        productivity. Each tool is organized by task so users can quickly find the most
+        relevant option for their work.
+      </p>
+      <p>
+        Not sure where to start? Browse
+        <a class="text-link" href="categories.html">AI tools by category</a>,
+        read practical guides on the
+        <a class="text-link" href="blog.html">AI Tools Blog</a>,
+        or use the
+        <a class="text-link" href="contact.html">tool submission form</a>
+        to suggest a useful AI tool.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">How to Use This Directory</span>
+          <h2>Filter, compare and open AI tools safely</h2>
+          <p>
+            This AI tools directory is designed to help users move from broad discovery to
+            practical selection. Start with a category, compare the pricing label and skill
+            level, read the short summary, then open the official website to confirm current
+            features, usage limits and account requirements.
+          </p>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card reveal">
+            <div class="tool-icon" aria-hidden="true">🔎</div>
+            <h3>Search by task</h3>
+            <p>Use keywords such as SEO, coding, Urdu, video, grammar, design or research.</p>
+          </article>
+
+          <article class="tool-card reveal">
+            <div class="tool-icon" aria-hidden="true">🏷️</div>
+            <h3>Compare pricing</h3>
+            <p>Check whether a tool is free, freemium, paid or trial-based before opening it.</p>
+          </article>
+
+          <article class="tool-card reveal">
+            <div class="tool-icon" aria-hidden="true">📚</div>
+            <h3>Match your level</h3>
+            <p>Select basic tools for learning and advanced tools for professional workflows.</p>
+          </article>
+
+          <article class="tool-card reveal">
+            <div class="tool-icon" aria-hidden="true">✅</div>
+            <h3>Verify official pages</h3>
+            <p>Use the Open Tool button to visit the official website and confirm latest details.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -98,7 +281,13 @@
         <div class="section-heading reveal">
           <span class="eyebrow">Browse tools</span>
           <h2>Choose a field and open the tool directly.</h2>
-          <p>Free tools are preferred where possible. Some tools use freemium or paid plans for advanced features.</p>
+          <p>
+            Free tools are preferred where possible. Some tools use freemium or paid plans
+            for advanced features. For broader browsing, visit
+            <a class="text-link" href="categories.html">AI tool categories</a>,
+            or read workflow examples on the
+            <a class="text-link" href="blog.html">AI Tools Blog</a>.
+          </p>
         </div>
 
         <div class="tool-grid large-tool-grid" id="toolsGrid">
@@ -1013,16 +1202,82 @@
         <div>
           <span class="eyebrow">Selection guide</span>
           <h2>Recommended usage order</h2>
-          <p>For your AI Tools Hub website, keep all cards as external links first. Later, you can add Firebase login, bookmarks, ratings and saved user preferences.</p>
+          <p>
+            Start with free tools for learning and testing, then move to freemium or paid
+            tools when you need stronger limits, collaboration, automation or professional
+            output quality.
+          </p>
         </div>
         <div class="check-list">
           <p>✓ Beginner users: use Free and Basic tools first</p>
           <p>✓ Advanced users: use coding, SEO and research tools</p>
           <p>✓ Content users: use English, Urdu and video tools</p>
-          <p>✓ Firebase next: save contact form and submitted tools online</p>
+          <p>✓ Directory users: compare pricing, level and category before choosing</p>
         </div>
       </div>
     </section>
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">AI Tools FAQ</span>
+          <h2>Common questions about free and paid AI tools</h2>
+          <p>
+            These short answers help users understand how to use the AI tools directory
+            before selecting external tools.
+          </p>
+        </div>
+
+        <div class="tool-grid">
+          <article class="tool-card reveal">
+            <h3>What is AI Tools Hub?</h3>
+            <p>
+              AI Tools Hub is a curated directory that helps users discover AI tools for
+              coding, marketing, writing, Urdu text, video creation, design, research and productivity.
+            </p>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>Are all AI tools free?</h3>
+            <p>
+              No. Many tools are free or freemium, while some require paid plans for advanced
+              features, larger limits or professional usage.
+            </p>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>How do I choose the best AI tool?</h3>
+            <p>
+              Choose a category, compare the pricing and level, read the summary, then open
+              the official website to confirm current features and limits.
+            </p>
+          </article>
+
+          <article class="tool-card reveal">
+            <h3>Can I suggest a new AI tool?</h3>
+            <p>
+              Yes. Use the
+              <a class="text-link" href="contact.html">tool submission form</a>
+              to suggest a useful tool, report an issue or share feedback.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section-padding">
+      <div class="container cta-card reveal">
+        <div>
+          <span class="eyebrow">Suggest a Tool</span>
+          <h2>Know a useful AI tool that should be listed?</h2>
+          <p>
+            Submit an AI tool, report an outdated link or share feedback to improve the
+            AI Tools Hub directory.
+          </p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Submit a Tool</a>
+      </div>
+    </section>
+
   </main>
 
   <div class="modal" id="toolModal" aria-hidden="true">
@@ -1037,6 +1292,43 @@
   </div>
 
   <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand" aria-label="AI Tools Hub Home">
+          <span class="brand-mark">AI</span>
+          <span>AI Tools Hub</span>
+        </a>
+        <p>
+          Curated directory of AI tools, practical guides, automation resources and
+          productivity workflows.
+        </p>
+      </div>
+
+      <div>
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="tools.html">AI Tools Directory</a>
+        <a href="categories.html">AI Tool Categories</a>
+        <a href="blog.html">AI Tools Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div>
+        <h4>Popular Categories</h4>
+        <a href="tools.html">Web Development Tools</a>
+        <a href="tools.html">Digital Marketing Tools</a>
+        <a href="tools.html">Urdu and English Writing Tools</a>
+        <a href="tools.html">Video Creation Tools</a>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <a href="contact.html">Submit AI Tool</a>
+        <a href="contact.html">Report Issue</a>
+        <a href="blog.html">AI Guides and Updates</a>
+      </div>
+    </div>
+
     <div class="footer-bottom container">
       <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
       <button class="back-to-top" data-scroll-top>↑ Top</button>
@@ -1044,14 +1336,14 @@
   </footer>
 
   <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 
-<!-- Firebase Config -->
-<script src="firebase-config.js"></script>
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
 
-<!-- Main Website Script -->
-<script src="script.js"></script>
+  <!-- Main Website Script -->
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,18 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI tool categories for writing, design, coding, marketing, research and automation." />
-  <title>AI Tools Hub | Categories</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Primary SEO -->
+  <title>AI Tools Categories | Browse AI Tools by Use Case</title>
+  <meta
+    name="description"
+    content="Browse AI tools by category and use case including writing, coding, web development, digital marketing, video creation, design, research, productivity and automation."
+  />
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/categories.html" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Tools Categories | Browse AI Tools by Use Case" />
+  <meta
+    property="og:description"
+    content="Explore AI tools by category for writing, coding, marketing, video creation, design, automation, research and productivity."
+  />
+  <meta property="og:url" content="https://ai-tools-hub-pk.netlify.app/categories.html" />
+  <meta property="og:site_name" content="AI Tools Hub" />
+
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI Tools Categories | Browse AI Tools by Use Case" />
+  <meta
+    name="twitter:description"
+    content="Browse AI tools by category and find useful tools for content, coding, marketing, design, video, research and automation workflows."
+  />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#101828" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Tools Categories",
+    "url": "https://ai-tools-hub-pk.netlify.app/categories.html",
+    "description": "Browse AI tools by category and use case including writing, coding, marketing, video creation, design, automation, research and productivity.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "AI Tools Hub",
+      "url": "https://ai-tools-hub-pk.netlify.app/"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ai-tools-hub-pk.netlify.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI Tools Categories",
+        "item": "https://ai-tools-hub-pk.netlify.app/categories.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Category Item List -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Tools Categories",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Writing and Content AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" },
+      { "@type": "ListItem", "position": 2, "name": "Design and Image AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" },
+      { "@type": "ListItem", "position": 3, "name": "Coding and Development AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" },
+      { "@type": "ListItem", "position": 4, "name": "Marketing and SEO AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" },
+      { "@type": "ListItem", "position": 5, "name": "Automation AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" },
+      { "@type": "ListItem", "position": 6, "name": "Research and Data AI Tools", "url": "https://ai-tools-hub-pk.netlify.app/tools.html" }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which AI tools category should beginners start with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Beginners should start with writing, productivity and research tools because they are easier to use and require less technical setup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can one AI tool belong to multiple categories?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. One AI tool can belong to multiple categories. A chatbot, for example, can support writing, coding, research and customer support workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should AI tools be evaluated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AI tools should be evaluated by accuracy, pricing, privacy policy, integrations, export options, reliability and suitability for the user's workflow."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
+
 <body>
   <header class="site-header" id="top">
-    <nav class="navbar container">
-      <a href="index.html" class="brand"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="brand" aria-label="AI Tools Hub Home">
+        <span class="brand-mark">AI</span>
+        <span>AI Tools Hub</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <div class="nav-menu" id="navMenu">
         <a href="index.html" class="nav-link">Home</a>
         <a href="tools.html" class="nav-link">Tools</a>
@@ -27,66 +161,133 @@
   </header>
 
   <main>
+    <!-- Page Hero -->
     <section class="page-hero section-padding-sm">
       <div class="container reveal">
-        <span class="eyebrow">Categories</span>
-        <h1>Organize AI tools by practical use case.</h1>
-        <p>Each category helps users quickly identify the right AI solution for their task.</p>
+        <span class="eyebrow">AI Tool Categories</span>
+        <h1>Browse AI Tools by Category and Use Case</h1>
+        <p>
+          Explore AI tools organized by task, workflow and user intent. Categories help
+          users quickly find relevant tools for writing, coding, marketing, design,
+          video creation, research, productivity and automation.
+        </p>
       </div>
     </section>
 
+    <!-- SEO Intro + Internal Linking -->
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Browse by Category</span>
+          <h2>AI tools organized for different tasks</h2>
+          <p>
+            Browse AI tools by category to find solutions for writing, coding, web development,
+            digital marketing, video creation, design, business automation, productivity and
+            research. Category-based browsing helps users select tools based on their exact use
+            case instead of searching randomly.
+          </p>
+          <p>
+            To compare individual tools, visit the
+            <a class="text-link" href="tools.html">complete AI tools directory</a>.
+            For tutorials and selection guides, read the
+            <a class="text-link" href="blog.html">AI Tools Blog</a>.
+            To suggest a missing category or tool, use the
+            <a class="text-link" href="contact.html">tool submission form</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Cards -->
     <section class="section-padding">
-      <div class="container category-grid">
-        <article class="category-card reveal">
-          <div class="category-icon">📝</div>
-          <h3>Writing & Content</h3>
-          <p>Blogs, captions, product descriptions, emails and reports.</p>
-          <a href="tools.html" class="text-link">View writing tools</a>
-        </article>
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Main Categories</span>
+          <h2>Choose AI tools by workflow type</h2>
+          <p>
+            Each category connects users with relevant free, freemium and paid AI tools.
+            Start with the category closest to your task, then compare tools inside the full directory.
+          </p>
+        </div>
 
-        <article class="category-card reveal">
-          <div class="category-icon">🎨</div>
-          <h3>Design & Images</h3>
-          <p>Images, thumbnails, banners, mockups and creative assets.</p>
-          <a href="tools.html" class="text-link">View design tools</a>
-        </article>
+        <div class="category-grid">
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">📝</div>
+            <h3>Writing &amp; Content</h3>
+            <p>
+              AI writing tools for blogs, captions, product descriptions, emails, reports,
+              grammar improvement, summaries and content planning.
+            </p>
+            <a href="tools.html" class="text-link">View writing AI tools</a>
+          </article>
 
-        <article class="category-card reveal">
-          <div class="category-icon">💻</div>
-          <h3>Coding & Development</h3>
-          <p>Code generation, debugging, documentation and testing support.</p>
-          <a href="tools.html" class="text-link">View coding tools</a>
-        </article>
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">🎨</div>
+            <h3>Design &amp; Images</h3>
+            <p>
+              AI design tools for images, thumbnails, banners, mockups, background removal,
+              branding assets and creative visual workflows.
+            </p>
+            <a href="tools.html" class="text-link">View design AI tools</a>
+          </article>
 
-        <article class="category-card reveal">
-          <div class="category-icon">📈</div>
-          <h3>Marketing & SEO</h3>
-          <p>Keyword ideas, SEO outlines, ads, campaigns and analytics.</p>
-          <a href="tools.html" class="text-link">View marketing tools</a>
-        </article>
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">💻</div>
+            <h3>Coding &amp; Development</h3>
+            <p>
+              AI and developer tools for code generation, debugging, documentation,
+              frontend development, hosting, testing and project deployment.
+            </p>
+            <a href="tools.html" class="text-link">View coding AI tools</a>
+          </article>
 
-        <article class="category-card reveal">
-          <div class="category-icon">⚙️</div>
-          <h3>Automation</h3>
-          <p>Workflow automation, task routing and operational efficiency.</p>
-          <a href="tools.html" class="text-link">View automation tools</a>
-        </article>
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">📈</div>
+            <h3>Marketing &amp; SEO</h3>
+            <p>
+              Digital marketing tools for keyword research, SEO outlines, ad campaigns,
+              analytics, social media planning and content optimization.
+            </p>
+            <a href="tools.html" class="text-link">View marketing AI tools</a>
+          </article>
 
-        <article class="category-card reveal">
-          <div class="category-icon">🔬</div>
-          <h3>Research & Data</h3>
-          <p>Summaries, data analysis, literature review and insights.</p>
-          <a href="tools.html" class="text-link">View research tools</a>
-        </article>
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">⚙️</div>
+            <h3>Automation &amp; Productivity</h3>
+            <p>
+              Automation tools for workflow routing, task management, repetitive operations,
+              CRM processes, productivity systems and business efficiency.
+            </p>
+            <a href="tools.html" class="text-link">View automation tools</a>
+          </article>
+
+          <article class="category-card reveal">
+            <div class="category-icon" aria-hidden="true">🔬</div>
+            <h3>Research &amp; Data</h3>
+            <p>
+              Research and data tools for summaries, literature review, academic search,
+              datasets, notebooks, evidence discovery and analysis workflows.
+            </p>
+            <a href="tools.html" class="text-link">View research AI tools</a>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- Use Case Matrix -->
     <section class="section-padding gradient-section">
       <div class="container two-column">
         <div class="section-heading reveal">
-          <span class="eyebrow">Use-case matrix</span>
+          <span class="eyebrow">Use-Case Matrix</span>
           <h2>Recommended AI stack by user type</h2>
-          <p>This section can help visitors understand which tools are suitable for their workflow.</p>
+          <p>
+            Different users need different AI tool combinations. This matrix gives a simple
+            starting point for selecting tools based on practical workflow needs.
+          </p>
+          <p>
+            For a full comparison, browse the
+            <a class="text-link" href="tools.html">AI tools directory</a>.
+          </p>
         </div>
 
         <div class="matrix-card reveal">
@@ -114,44 +315,140 @@
       </div>
     </section>
 
+    <!-- Category Selection Guide -->
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Selection Guide</span>
+          <h2>How to choose the right AI tools category</h2>
+          <p>
+            Start by defining the task you want to improve. If the goal is content creation,
+            use writing and marketing tools. If the goal is website creation, use coding and
+            web development tools. If the goal is learning or academic work, use research,
+            summarization and note-taking tools.
+          </p>
+          <p>
+            You can also explore practical tutorials in the
+            <a class="text-link" href="blog.html">AI tools guides section</a>
+            before choosing a tool.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
     <section class="section-padding">
       <div class="container faq-section reveal">
         <div class="section-heading centered">
           <span class="eyebrow">FAQ</span>
-          <h2>Common category questions</h2>
+          <h2>Common AI tools category questions</h2>
+          <p>
+            These questions help users understand how AI tools are grouped and how to select
+            the most relevant category for their workflow.
+          </p>
         </div>
 
         <div class="accordion">
-          <button class="accordion-btn">Which category should beginners start with?<span>+</span></button>
-          <div class="accordion-content"><p>Start with writing, productivity and research tools because they require less technical setup.</p></div>
+          <button class="accordion-btn" type="button">
+            Which AI tools category should beginners start with?
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Beginners should start with writing, productivity and research tools because they
+              are easier to use and require less technical setup.
+            </p>
+          </div>
         </div>
+
         <div class="accordion">
-          <button class="accordion-btn">Can one tool belong to multiple categories?<span>+</span></button>
-          <div class="accordion-content"><p>Yes. A chatbot can be used for writing, customer support, coding and research depending on its features.</p></div>
+          <button class="accordion-btn" type="button">
+            Can one AI tool belong to multiple categories?
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Yes. A chatbot can be used for writing, customer support, coding and research
+              depending on its features and user workflow.
+            </p>
+          </div>
         </div>
+
         <div class="accordion">
-          <button class="accordion-btn">How should tools be evaluated?<span>+</span></button>
-          <div class="accordion-content"><p>Evaluate accuracy, privacy policy, pricing, integrations, export options and reliability.</p></div>
+          <button class="accordion-btn" type="button">
+            How should AI tools be evaluated?
+            <span>+</span>
+          </button>
+          <div class="accordion-content">
+            <p>
+              Evaluate accuracy, privacy policy, pricing, integrations, export options,
+              reliability, ease of use and whether the tool matches your workflow.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section-padding">
+      <div class="container cta-card reveal">
+        <div>
+          <span class="eyebrow">Suggest a Category</span>
+          <h2>Do you want to submit a new AI tool category?</h2>
+          <p>
+            Share a missing category, recommend a useful AI tool or report an issue with
+            the current AI Tools Hub directory.
+          </p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Contact AI Tools Hub</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand" aria-label="AI Tools Hub Home">
+          <span class="brand-mark">AI</span>
+          <span>AI Tools Hub</span>
+        </a>
+        <p>
+          Modern directory and resource hub for AI tools, category-based discovery,
+          automation workflows and practical AI guides.
+        </p>
+      </div>
+
+      <div>
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="tools.html">AI Tools Directory</a>
+        <a href="categories.html">AI Tool Categories</a>
+        <a href="blog.html">AI Tools Blog</a>
+      </div>
+
+      <div>
+        <h4>Support</h4>
+        <a href="contact.html">Submit AI Tool</a>
+        <a href="contact.html">Suggest Category</a>
+        <a href="contact.html">Report Issue</a>
+      </div>
+    </div>
+
     <div class="footer-bottom container">
       <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
       <button class="back-to-top" data-scroll-top>↑ Top</button>
     </div>
   </footer>
 
- <!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-<!-- Firebase Config -->
-<script src="firebase-config.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 
-<!-- Main Website Script -->
-<script src="script.js"></script>
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
+
+  <!-- Main Website Script -->
+  <script src="script.js"></script>
 </body>
 </html>
