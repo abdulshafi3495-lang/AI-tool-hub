@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>AI Tools Hub | Free and Paid AI Tools Directory</title>
+  <title>AI Tools Hub | Best AI Tools for Students, Business, Freelancers and Creators</title>
   <meta
     name="description"
-    content="AI Tools Hub is a curated directory of free and paid AI tools for web development, digital marketing, English and Urdu writing, video creation, design, productivity and automation."
+    content="Find free and paid AI tools by user type. Discover AI tools, ready prompts and practical workflows for students, jobholders, shopkeepers, freelancers, teachers, YouTubers, developers and marketers."
+  />
+  <meta
+    name="keywords"
+    content="AI tools for students, AI tools for shopkeepers, AI tools for freelancers, AI tools for teachers, AI tools for YouTubers, AI tools for developers, AI tools for marketers, free AI tools, ChatGPT prompts, AI tools Pakistan"
   />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/" />
@@ -18,10 +22,10 @@
 
   <!-- Open Graph SEO -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI Tools Hub | Free and Paid AI Tools Directory" />
+  <meta property="og:title" content="AI Tools Hub | Best AI Tools by User Type" />
   <meta
     property="og:description"
-    content="Discover free and paid AI tools for web development, digital marketing, writing, video creation, design, productivity and automation."
+    content="Choose your role and get recommended AI tools, ready prompts and workflows for study, jobs, business, freelancing, teaching, YouTube, development and marketing."
   />
   <meta property="og:url" content="https://ai-tools-hub-pk.netlify.app/" />
   <meta property="og:site_name" content="AI Tools Hub" />
@@ -31,7 +35,7 @@
   <meta name="twitter:title" content="AI Tools Hub | Free and Paid AI Tools Directory" />
   <meta
     name="twitter:description"
-    content="Browse AI tools for coding, marketing, writing, video creation, design, productivity and automation."
+    content="Find AI tools by role, use case, prompt and workflow."
   />
 
   <!-- Theme -->
@@ -47,7 +51,7 @@
     "@type": "WebSite",
     "name": "AI Tools Hub",
     "url": "https://ai-tools-hub-pk.netlify.app/",
-    "description": "AI Tools Hub is a curated directory of free and paid AI tools for web development, digital marketing, writing, video creation, design, productivity and automation.",
+    "description": "AI Tools Hub helps users find free and paid AI tools by role, use case, prompt and workflow.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://ai-tools-hub-pk.netlify.app/tools.html?search={search_term_string}",
@@ -66,6 +70,229 @@
     "logo": "https://ai-tools-hub-pk.netlify.app/favicon.svg"
   }
   </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which AI tools are best for students?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Students can use AI tools for assignment outlines, research summaries, grammar improvement, note-making, presentation planning and exam preparation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI tools are useful for shopkeepers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Shopkeepers can use AI tools for product descriptions, WhatsApp marketing messages, invoice text, customer replies and Facebook ad copy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I copy prompts from AI Tools Hub?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AI Tools Hub provides ready prompts for students, jobholders, shopkeepers, freelancers, teachers, creators, developers and marketers."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Homepage Feature Styles -->
+  <style>
+    .role-finder-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .role-finder-card {
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 28px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(0, 212, 255, 0.12), transparent 32%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+      box-shadow: var(--shadow);
+    }
+
+    .role-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .role-tab {
+      border: 1px solid rgba(148, 163, 184, 0.26);
+      border-radius: 999px;
+      padding: 11px 16px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.045);
+      font-weight: 800;
+      transition: 0.25s ease;
+    }
+
+    .role-tab:hover,
+    .role-tab.active {
+      color: #ffffff;
+      border-color: rgba(0, 212, 255, 0.58);
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.32), rgba(0, 212, 255, 0.18));
+      transform: translateY(-2px);
+    }
+
+    .role-output {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .role-panel {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 22px;
+      padding: 22px;
+      background: rgba(8, 13, 24, 0.48);
+    }
+
+    .role-panel h3 {
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .role-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .role-list li {
+      padding: 12px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 14px;
+      color: #dbeafe;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .prompt-box {
+      display: grid;
+      gap: 12px;
+    }
+
+    .prompt-item {
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(15, 23, 42, 0.65);
+    }
+
+    .prompt-item p {
+      color: #dbeafe;
+      margin-bottom: 12px;
+    }
+
+    .copy-prompt-btn {
+      border: 1px solid rgba(0, 212, 255, 0.38);
+      border-radius: 999px;
+      padding: 8px 13px;
+      color: #ffffff;
+      background: rgba(0, 212, 255, 0.12);
+      font-weight: 800;
+    }
+
+    .copy-prompt-btn:hover {
+      background: rgba(0, 212, 255, 0.22);
+    }
+
+    .workflow-steps {
+      display: grid;
+      gap: 12px;
+      counter-reset: workflow;
+    }
+
+    .workflow-step {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #dbeafe;
+    }
+
+    .workflow-step::before {
+      counter-increment: workflow;
+      content: counter(workflow);
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-weight: 900;
+    }
+
+    .role-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .quick-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .quick-feature-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+      box-shadow: var(--shadow);
+      transition: 0.25s ease;
+    }
+
+    .quick-feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 212, 255, 0.35);
+      box-shadow: 0 24px 70px rgba(0, 212, 255, 0.1);
+    }
+
+    .quick-feature-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 17px;
+      background: rgba(108, 99, 255, 0.16);
+      font-size: 1.8rem;
+    }
+
+    @media (max-width: 980px) {
+      .role-output,
+      .quick-feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .role-finder-card {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -92,423 +319,10 @@
         <a href="tools.html" class="nav-link">Tools</a>
         <a href="categories.html" class="nav-link">Categories</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-        <a href="tools.html" class="nav-cta">Explore Tools</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section section-padding">
-      <div class="container hero-grid">
-        <div class="hero-content reveal">
-          <span class="eyebrow">AI Automation Platform</span>
-
-          <h1>Discover Free and Paid AI Tools for Smarter Workflows</h1>
-
-          <p class="hero-description">
-            Discover, compare, and organize AI tools for writing, design, automation,
-            productivity, coding, research and business operations.
-          </p>
-
-          <div class="hero-actions">
-            <a href="tools.html" class="btn btn-primary">Get Started</a>
-            <a href="categories.html" class="btn btn-outline">View Categories</a>
-          </div>
-
-          <div class="hero-stats" aria-label="Platform statistics">
-            <div>
-              <strong>120+</strong>
-              <span>Curated tools</span>
-            </div>
-            <div>
-              <strong>18</strong>
-              <span>AI categories</span>
-            </div>
-            <div>
-              <strong>24/7</strong>
-              <span>Resource access</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-visual reveal" aria-label="AI workflow assistant preview">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-
-          <div class="ai-card primary-ai-card">
-            <div class="ai-card-icon" aria-hidden="true">🤖</div>
-            <h2>AI Workflow Assistant</h2>
-            <p>Automate repetitive tasks and reduce manual effort.</p>
-          </div>
-
-          <div class="mini-card mini-card-top">
-            <strong>93%</strong>
-            <span>Task efficiency</span>
-          </div>
-
-          <div class="mini-card mini-card-bottom">
-            <strong>4.8/5</strong>
-            <span>User rating</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SEO Intro + Internal Linking -->
-    <section class="section-padding-sm">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">AI Tools Directory</span>
-          <h2>Find the right AI tool for your workflow</h2>
-          <p>
-            AI Tools Hub helps users discover free and paid AI tools for web development,
-            digital marketing, content writing, Urdu and English text, video creation,
-            design, productivity and business automation. The directory is organized to help
-            students, creators, developers, marketers and businesses choose tools faster.
-          </p>
-          <p>
-            Start by exploring our
-            <a class="text-link" href="tools.html">AI tools directory</a>,
-            browsing
-            <a class="text-link" href="categories.html">AI tools by category</a>,
-            or reading practical guides on the
-            <a class="text-link" href="blog.html">AI Tools Blog</a>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Search Section -->
-    <section class="search-section section-padding-sm">
-      <div class="container reveal">
-        <div class="section-heading centered">
-          <span class="eyebrow">Quick Search</span>
-          <h2>Find an AI tool quickly</h2>
-          <p>
-            Search featured AI tools for chat, image generation, SEO writing, coding,
-            content creation and automation.
-          </p>
-        </div>
-
-        <div class="search-box">
-          <input
-            type="search"
-            id="homeSearch"
-            placeholder="Search AI tools, e.g. chatbot, image, SEO..."
-            aria-label="Search AI tools"
-          />
-          <span aria-hidden="true">⌕</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Tools -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Featured Tools</span>
-          <h2>Popular AI solutions for everyday tasks</h2>
-          <p>
-            Explore AI tools for writing, design, SEO, coding and productivity. For the
-            full collection, visit the
-            <a class="text-link" href="tools.html">complete AI tools directory</a>.
-          </p>
-        </div>
-
-        <div class="tool-grid" id="homeToolGrid">
-          <article class="tool-card reveal" data-title="chat ai writing assistant">
-            <div class="tool-icon" aria-hidden="true">💬</div>
-            <h3>Chat AI</h3>
-            <p>Smart conversational assistant for support, content and research.</p>
-            <a href="tools.html" class="text-link">Explore chat AI tools</a>
-          </article>
-
-          <article class="tool-card reveal" data-title="image generator design art">
-            <div class="tool-icon" aria-hidden="true">🎨</div>
-            <h3>Image Generator</h3>
-            <p>Create AI images, concepts, mockups and visual assets instantly.</p>
-            <a href="tools.html" class="text-link">Explore image AI tools</a>
-          </article>
-
-          <article class="tool-card reveal" data-title="seo writer content marketing">
-            <div class="tool-icon" aria-hidden="true">📝</div>
-            <h3>SEO Writer</h3>
-            <p>Generate optimized articles, titles, meta descriptions and outlines.</p>
-            <a href="tools.html" class="text-link">Explore SEO writing tools</a>
-          </article>
-
-          <article class="tool-card reveal" data-title="code assistant programming developer">
-            <div class="tool-icon" aria-hidden="true">💻</div>
-            <h3>Code Assistant</h3>
-            <p>Improve code generation, debugging, documentation and testing.</p>
-            <a href="tools.html" class="text-link">Explore coding AI tools</a>
-          </article>
-        </div>
-
-        <p class="empty-state" id="homeEmptyState">No matching tool found.</p>
-      </div>
-    </section>
-
-    <!-- Workflow Section -->
-    <section class="section-padding gradient-section">
-      <div class="container two-column">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Workflow</span>
-          <h2>How AI Tools Hub works</h2>
-          <p>
-            Select a category, compare relevant tools, and apply them to your business,
-            academic or creative workflow.
-          </p>
-          <p>
-            You can also explore
-            <a class="text-link" href="categories.html">AI tool categories</a>
-            to find tools by use case.
-          </p>
-        </div>
-
-        <div class="timeline reveal">
-          <div class="timeline-item">
-            <span>01</span>
-            <div>
-              <h3>Discover</h3>
-              <p>Browse tools by use case, category and task type.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <span>02</span>
-            <div>
-              <h3>Compare</h3>
-              <p>Check features, pricing type, workflow fit and ideal usage.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <span>03</span>
-            <div>
-              <h3>Implement</h3>
-              <p>Add selected AI tools into your workflow and track performance.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog/Internal Linking CTA -->
-    <section class="section-padding-sm">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">AI Guides</span>
-          <h2>Learn how to use AI tools effectively</h2>
-          <p>
-            Read practical AI guides, tool reviews and workflow tutorials on the
-            <a class="text-link" href="blog.html">AI Tools Blog</a>. These guides help
-            users understand how to select AI tools for marketing, coding, writing,
-            productivity and automation.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section section-padding">
-      <div class="container cta-card reveal">
-        <div>
-          <span class="eyebrow">Suggest a Tool</span>
-          <h2>Know a useful AI tool that should be listed?</h2>
-          <p>
-            Submit an AI tool, report an issue or share feedback to help improve the
-            AI Tools Hub directory.
-          </p>
-        </div>
-        <a href="contact.html" class="btn btn-primary">Submit a Tool</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="index.html" class="brand footer-brand" aria-label="AI Tools Hub Home">
-          <span class="brand-mark">AI</span>
-          <span>AI Tools Hub</span>
-        </a>
-        <p>
-          Modern directory and resource hub for AI tools, automation workflows,
-          productivity tools and practical AI guides.
-        </p>
-      </div>
-
-      <div>
-        <h4>Pages</h4>
-        <a href="tools.html">AI Tools Directory</a>
-        <a href="categories.html">AI Tool Categories</a>
-        <a href="blog.html">AI Tools Blog</a>
-        <a href="contact.html">Contact</a>
-      </div>
-
-      <div>
-        <h4>Support</h4>
-        <a href="contact.html">Submit AI Tool</a>
-        <a href="contact.html">Report Issue</a>
-        <a href="blog.html">AI Guides and Updates</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom container">
-      <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
-      <button class="back-to-top" data-scroll-top>↑ Top</button>
-    </div>
-  </footer>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
-
-  <!-- Firebase Config -->
-  <script src="firebase-config.js"></script>
-
-  <!-- Main Website Script -->
-  <script src="script.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Primary SEO -->
-  <title>AI Tools Hub Pakistan | AI Tool Finder, Prompts and Free Mini Tools</title>
-  <meta
-    name="description"
-    content="AI Tools Hub Pakistan helps students, jobholders, shopkeepers, freelancers, teachers, YouTubers, developers and marketers find AI tools, copy ready prompts, free mini tools and comparison guides."
-  />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ai-tools-hub-pk.netlify.app/" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="manifest" href="site.webmanifest" />
-
-  <!-- Open Graph SEO -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="AI Tools Hub | Free and Paid AI Tools Directory" />
-  <meta
-    property="og:description"
-    content="Discover free and paid AI tools for web development, digital marketing, writing, video creation, design, productivity and automation."
-  />
-  <meta property="og:url" content="https://ai-tools-hub-pk.netlify.app/" />
-  <meta property="og:site_name" content="AI Tools Hub" />
-
-  <!-- Twitter Card SEO -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AI Tools Hub | Free and Paid AI Tools Directory" />
-  <meta
-    name="twitter:description"
-    content="Browse AI tools for coding, marketing, writing, video creation, design, productivity and automation."
-  />
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#101828" />
-
-
-  <!-- Technical SEO / Performance -->
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="//www.gstatic.com" />
-  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
-  <link rel="dns-prefetch" href="//www.google-analytics.com" />
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- Structured Data: Website -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AI Tools Hub",
-    "url": "https://ai-tools-hub-pk.netlify.app/",
-    "description": "AI Tools Hub is a curated directory of free and paid AI tools for web development, digital marketing, writing, video creation, design, productivity and automation.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://ai-tools-hub-pk.netlify.app/tools.html?search={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- Structured Data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AI Tools Hub",
-    "url": "https://ai-tools-hub-pk.netlify.app/",
-    "logo": "https://ai-tools-hub-pk.netlify.app/favicon.svg"
-  }
-  </script>
-
-  <!-- Structured Data: Role-Based Feature FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Which AI tools are useful for students in Pakistan?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Students can start with research, citation, note-taking, summarization and assignment outline tools. AI Tools Hub groups these tools with ready prompts and workflows."}
-      },
-      {
-        "@type": "Question",
-        "name": "Can shopkeepers use AI tools for daily business?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Shopkeepers can use product description generators, WhatsApp marketing messages, invoice text generators, customer reply prompts and Facebook ad copy tools."}
-      },
-      {
-        "@type": "Question",
-        "name": "Does AI Tools Hub include free mini tools?",
-        "acceptedAnswer": {"@type": "Answer", "text": "Yes. AI Tools Hub includes free JavaScript-based mini tools for titles, descriptions, captions, email drafts and workflow templates."}
-      }
-    ]
-  }
-  </script>
-
-</head>
-
-<body>
-  <header class="site-header" id="top">
-    <nav class="navbar container" aria-label="Main navigation">
-      <a href="index.html" class="brand" aria-label="AI Tools Hub Home">
-        <span class="brand-mark">AI</span>
-        <span>AI Tools Hub</span>
-      </a>
-
-      <button
-        class="menu-toggle"
-        id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link" aria-current="page">Home</a>
-        <a href="tools.html" class="nav-link">Tools</a>
-        <a href="categories.html" class="nav-link">Categories</a>
         <a href="prompt-library.html" class="nav-link">Prompts</a>
         <a href="free-tools.html" class="nav-link">Free Tools</a>
-        <a href="compare-tools.html" class="nav-link">Compare</a>
-        <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
-        <a href="index.html#tool-finder" class="nav-cta">Tool Finder</a>
+        <a href="#roleFinder" class="nav-cta">Find Tools</a>
       </div>
     </nav>
   </header>
@@ -518,32 +332,33 @@
     <section class="hero-section section-padding">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <span class="eyebrow">AI Automation Platform</span>
+          <span class="eyebrow">AI Tools by Role and Workflow</span>
 
-          <h1>Discover Free and Paid AI Tools for Smarter Workflows</h1>
+          <h1>Find the Best AI Tools for Your Work, Study or Business</h1>
 
           <p class="hero-description">
-            Discover, compare, and organize AI tools for writing, design, automation,
-            productivity, coding, research and business operations.
+            Choose your role and get recommended AI tools, ready prompts, practical workflows
+            and useful templates for students, jobholders, shopkeepers, freelancers, teachers,
+            YouTubers, developers and marketers.
           </p>
 
           <div class="hero-actions">
-            <a href="tools.html" class="btn btn-primary">Get Started</a>
-            <a href="categories.html" class="btn btn-outline">View Categories</a>
+            <a href="#roleFinder" class="btn btn-primary">Find Tools by Role</a>
+            <a href="free-tools.html" class="btn btn-outline">Use Free Mini Tools</a>
           </div>
 
           <div class="hero-stats" aria-label="Platform statistics">
             <div>
-              <strong>120+</strong>
-              <span>Curated tools</span>
+              <strong>357+</strong>
+              <span>Listed tools</span>
             </div>
             <div>
-              <strong>18</strong>
-              <span>AI categories</span>
+              <strong>8</strong>
+              <span>User role workflows</span>
             </div>
             <div>
-              <strong>24/7</strong>
-              <span>Resource access</span>
+              <strong>Free</strong>
+              <span>Prompts and mini tools</span>
             </div>
           </div>
         </div>
@@ -554,18 +369,18 @@
 
           <div class="ai-card primary-ai-card">
             <div class="ai-card-icon" aria-hidden="true">🤖</div>
-            <h2>AI Workflow Assistant</h2>
-            <p>Automate repetitive tasks and reduce manual effort.</p>
+            <h2>AI Tool Finder</h2>
+            <p>Select your role and get tools, prompts and workflows instantly.</p>
           </div>
 
           <div class="mini-card mini-card-top">
-            <strong>93%</strong>
-            <span>Task efficiency</span>
+            <strong>8</strong>
+            <span>Role types</span>
           </div>
 
           <div class="mini-card mini-card-bottom">
-            <strong>4.8/5</strong>
-            <span>User rating</span>
+            <strong>1 Click</strong>
+            <span>Prompt copy</span>
           </div>
         </div>
       </div>
@@ -576,41 +391,37 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">AI Tools Directory</span>
-          <h2>Find the right AI tool for your workflow</h2>
+          <h2>Find the right AI tool for your exact workflow</h2>
           <p>
             AI Tools Hub helps users discover free and paid AI tools for web development,
             digital marketing, content writing, Urdu and English text, video creation,
             design, productivity and business automation. The directory is organized to help
-            students, creators, developers, marketers and businesses choose tools faster.
+            students, creators, developers, marketers, shopkeepers and businesses choose tools faster.
           </p>
           <p>
-            Start by exploring our
-            <a class="text-link" href="tools.html">AI tools directory</a>,
-            browsing
-            <a class="text-link" href="categories.html">AI tools by category</a>,
-            or reading practical guides on the
-            <a class="text-link" href="blog.html">AI Tools Blog</a>.
+            Start by using the <a class="text-link" href="#roleFinder">AI tool finder by role</a>,
+            explore the <a class="text-link" href="tools.html">AI tools directory</a>,
+            copy ready prompts from the <a class="text-link" href="prompt-library.html">prompt library</a>,
+            or use <a class="text-link" href="free-tools.html">free mini tools</a>.
           </p>
         </div>
       </div>
     </section>
 
-
-    <!-- Role-Based AI Tool Finder -->
-    <section class="section-padding" id="tool-finder">
+    <!-- Role-Based Tool Finder -->
+    <section class="section-padding role-finder-section" id="roleFinder">
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">AI Tool Finder by User Type</span>
-          <h2>Choose your role and get recommended tools, prompts and workflow</h2>
+          <h2>Who are you?</h2>
           <p>
-            Select whether you are a student, jobholder, shopkeeper, freelancer, teacher,
-            YouTuber, developer or marketer. The finder will show a practical tool stack,
-            copy-ready prompts, a simple workflow and related internal resources.
+            Select your role to see recommended tools, ready prompts, practical workflow
+            and useful pages for your daily work.
           </p>
         </div>
 
-        <div class="role-finder-card reveal" data-role-finder>
-          <div class="role-tabs" aria-label="Select user type">
+        <div class="role-finder-card reveal">
+          <div class="role-tabs" role="tablist" aria-label="Choose user type">
             <button class="role-tab active" type="button" data-role="student">Student</button>
             <button class="role-tab" type="button" data-role="jobholder">Jobholder</button>
             <button class="role-tab" type="button" data-role="shopkeeper">Shopkeeper</button>
@@ -621,61 +432,32 @@
             <button class="role-tab" type="button" data-role="marketer">Marketer</button>
           </div>
 
-          <div class="role-result-grid">
-            <article class="role-result-panel">
-              <span class="eyebrow">Recommended Stack</span>
-              <h3 id="roleTitle">Best AI tools for students</h3>
-              <p id="roleSummary">Use research, writing, note-taking and assignment planning tools to study faster and organize academic work.</p>
-              <div class="mini-list" id="roleTools"></div>
-            </article>
+          <div class="role-output" aria-live="polite">
+            <div class="role-panel">
+              <h3 id="roleTitle">Recommended tools for Students</h3>
+              <ul class="role-list" id="roleTools"></ul>
+            </div>
 
-            <article class="role-result-panel">
-              <span class="eyebrow">Ready Prompts</span>
-              <div class="prompt-mini-list" id="rolePrompts"></div>
-              <a class="btn btn-outline small-btn" href="prompt-library.html">Open full prompt library</a>
-            </article>
+            <div class="role-panel">
+              <h3>Ready prompts</h3>
+              <div class="prompt-box" id="rolePrompts"></div>
+            </div>
 
-            <article class="role-result-panel">
-              <span class="eyebrow">Workflow</span>
-              <ol class="workflow-list" id="roleWorkflow"></ol>
-              <div class="role-links" id="roleLinks"></div>
-            </article>
+            <div class="role-panel">
+              <h3>Practical workflow</h3>
+              <div class="workflow-steps" id="roleWorkflow"></div>
+            </div>
+
+            <div class="role-panel">
+              <h3>Useful pages</h3>
+              <ul class="role-list" id="rolePages"></ul>
+              <div class="role-links">
+                <a href="tools.html" class="btn btn-outline small-btn">Browse Tools</a>
+                <a href="prompt-library.html" class="btn btn-outline small-btn">Prompt Library</a>
+                <a href="free-tools.html" class="btn btn-primary small-btn">Free Mini Tools</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Growth Feature Links -->
-    <section class="section-padding-sm">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">New Free Resources</span>
-          <h2>Prompts, mini generators and comparison pages for long-tail SEO traffic</h2>
-          <p>
-            These sections target practical keywords such as best AI tools for students in Pakistan,
-            AI tools for shopkeepers, free AI tools for assignment writing, AI tools for Urdu content,
-            AI tools for Fiverr freelancers and AI tools for YouTube beginners.
-          </p>
-        </div>
-        <div class="category-grid">
-          <article class="category-card reveal">
-            <div class="category-icon" aria-hidden="true">📚</div>
-            <h3>Prompt Library</h3>
-            <p>Copy ready prompts for students, resumes, YouTube scripts, Facebook ads, Urdu content and business messages.</p>
-            <a href="prompt-library.html" class="text-link">Browse prompts</a>
-          </article>
-          <article class="category-card reveal">
-            <div class="category-icon" aria-hidden="true">🧰</div>
-            <h3>Free Mini Tools</h3>
-            <p>Generate resume headlines, product descriptions, WhatsApp business messages, captions, titles and meta tags.</p>
-            <a href="free-tools.html" class="text-link">Use free generators</a>
-          </article>
-          <article class="category-card reveal">
-            <div class="category-icon" aria-hidden="true">⚖️</div>
-            <h3>Tool Comparisons</h3>
-            <p>Compare popular tools by best use case, pricing type, skill level, workflow fit and official website.</p>
-            <a href="compare-tools.html" class="text-link">Compare tools</a>
-          </article>
         </div>
       </div>
     </section>
@@ -751,15 +533,52 @@
       </div>
     </section>
 
+    <!-- Fast Features Section -->
+    <section class="section-padding-sm gradient-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Free Useful Features</span>
+          <h2>More than a simple AI tools directory</h2>
+          <p>
+            Use ready prompts, free mini generators and comparison pages to select and apply
+            AI tools faster.
+          </p>
+        </div>
+
+        <div class="quick-feature-grid">
+          <article class="quick-feature-card reveal">
+            <div class="quick-feature-icon" aria-hidden="true">📋</div>
+            <h3>Prompt Library</h3>
+            <p>Copy ready prompts for students, resumes, YouTube scripts, Facebook ads, Urdu content and business tasks.</p>
+            <a href="prompt-library.html" class="text-link">Open prompt library</a>
+          </article>
+
+          <article class="quick-feature-card reveal">
+            <div class="quick-feature-icon" aria-hidden="true">🧰</div>
+            <h3>Free Mini Tools</h3>
+            <p>Generate resume headlines, product descriptions, WhatsApp messages, captions, titles and meta descriptions.</p>
+            <a href="free-tools.html" class="text-link">Use free tools</a>
+          </article>
+
+          <article class="quick-feature-card reveal">
+            <div class="quick-feature-icon" aria-hidden="true">⚖️</div>
+            <h3>Tool Comparison</h3>
+            <p>Compare AI tools by best use case, pricing, skill level, workflow fit and official link.</p>
+            <a href="compare-tools.html" class="text-link">Compare tools</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Workflow Section -->
-    <section class="section-padding gradient-section">
+    <section class="section-padding">
       <div class="container two-column">
         <div class="section-heading reveal">
           <span class="eyebrow">Workflow</span>
           <h2>How AI Tools Hub works</h2>
           <p>
-            Select a category, compare relevant tools, and apply them to your business,
-            academic or creative workflow.
+            Select your role, explore recommended tools, copy practical prompts and apply
+            them to your business, academic or creative workflow.
           </p>
           <p>
             You can also explore
@@ -772,16 +591,16 @@
           <div class="timeline-item">
             <span>01</span>
             <div>
-              <h3>Discover</h3>
-              <p>Browse tools by use case, category and task type.</p>
+              <h3>Select Role</h3>
+              <p>Choose Student, Shopkeeper, Freelancer, Teacher, YouTuber, Developer or Marketer.</p>
             </div>
           </div>
 
           <div class="timeline-item">
             <span>02</span>
             <div>
-              <h3>Compare</h3>
-              <p>Check features, pricing type, workflow fit and ideal usage.</p>
+              <h3>Get Tools and Prompts</h3>
+              <p>See recommended tools, copy prompts and open useful mini tools.</p>
             </div>
           </div>
 
@@ -789,7 +608,7 @@
             <span>03</span>
             <div>
               <h3>Implement</h3>
-              <p>Add selected AI tools into your workflow and track performance.</p>
+              <p>Add selected AI tools into your daily workflow and improve output speed.</p>
             </div>
           </div>
         </div>
@@ -836,7 +655,7 @@
           <span>AI Tools Hub</span>
         </a>
         <p>
-          Modern directory and resource hub for AI tools, automation workflows,
+          Modern directory and resource hub for AI tools, prompts, automation workflows,
           productivity tools and practical AI guides.
         </p>
       </div>
@@ -848,16 +667,13 @@
         <a href="blog.html">AI Tools Blog</a>
         <a href="prompt-library.html">Prompt Library</a>
         <a href="free-tools.html">Free Mini Tools</a>
-        <a href="compare-tools.html">Compare AI Tools</a>
-        <a href="contact.html">Contact</a>
       </div>
 
       <div>
         <h4>Support</h4>
         <a href="contact.html">Submit AI Tool</a>
         <a href="contact.html">Report Issue</a>
-        <a href="blog.html">AI Guides and Updates</a>
-        <a href="prompt-library.html">Copy Ready Prompts</a>
+        <a href="compare-tools.html">Compare Tools</a>
       </div>
     </div>
 
@@ -877,5 +693,304 @@
 
   <!-- Main Website Script -->
   <script src="script.js"></script>
+
+  <!-- Homepage Role Finder Script -->
+  <script>
+    const roleData = {
+      student: {
+        title: "Recommended tools for Students",
+        tools: [
+          "Assignment outline generator",
+          "Research summarizer",
+          "Grammar checker",
+          "Presentation maker",
+          "Notes organizer"
+        ],
+        prompts: [
+          "Create an assignment outline on [topic] with introduction, main headings, subheadings and conclusion.",
+          "Explain [topic] in simple English with examples for exam preparation.",
+          "Summarize this paragraph into short bullet points: [paste text]."
+        ],
+        workflow: [
+          "Search your topic and collect basic points.",
+          "Use AI to generate an outline and improve structure.",
+          "Check grammar, add references and create final draft.",
+          "Convert the final content into presentation or notes."
+        ],
+        pages: [
+          "AI tools for assignment writing",
+          "Best ChatGPT prompts for students",
+          "Free assignment outline generator"
+        ]
+      },
+      jobholder: {
+        title: "Recommended tools for Jobholders",
+        tools: [
+          "Resume headline generator",
+          "Job application email generator",
+          "Meeting summary tool",
+          "LinkedIn post generator",
+          "Productivity planner"
+        ],
+        prompts: [
+          "Write a professional job application email for [job title] using my experience: [details].",
+          "Improve this resume summary and make it more professional: [paste summary].",
+          "Convert these meeting notes into action items: [paste notes]."
+        ],
+        workflow: [
+          "Prepare resume, LinkedIn profile and cover email.",
+          "Use AI to improve wording and remove grammar mistakes.",
+          "Create job-specific emails for each application.",
+          "Track applications and follow-up messages."
+        ],
+        pages: [
+          "AI tools for job application email",
+          "Resume writing prompts",
+          "Free job application email generator"
+        ]
+      },
+      shopkeeper: {
+        title: "Recommended tools for Shopkeepers",
+        tools: [
+          "Product description generator",
+          "WhatsApp marketing message generator",
+          "Invoice text generator",
+          "Customer reply generator",
+          "Facebook ad copy generator"
+        ],
+        prompts: [
+          "Write a short WhatsApp marketing message for [product] with price, benefit and call to action.",
+          "Create a product description for [product name] for Pakistani customers.",
+          "Write a polite customer reply for this complaint: [paste complaint]."
+        ],
+        workflow: [
+          "Enter product name, price and main benefit.",
+          "Generate product description and WhatsApp message.",
+          "Post message on WhatsApp, Facebook and Instagram.",
+          "Use AI replies for customer questions and complaints."
+        ],
+        pages: [
+          "AI tools for shopkeepers",
+          "WhatsApp business message generator",
+          "Facebook ad prompts for small business"
+        ]
+      },
+      freelancer: {
+        title: "Recommended tools for Freelancers",
+        tools: [
+          "Fiverr gig description generator",
+          "Upwork proposal generator",
+          "Portfolio bio writer",
+          "Client reply generator",
+          "Invoice text generator"
+        ],
+        prompts: [
+          "Write an Upwork proposal for this job post: [paste job post].",
+          "Create a Fiverr gig description for [service] with SEO keywords.",
+          "Write a professional reply to a client asking for revision: [details]."
+        ],
+        workflow: [
+          "Choose your service and define your offer.",
+          "Use AI to write gig, proposal and portfolio text.",
+          "Apply to relevant jobs with customized proposals.",
+          "Use templates for client communication and delivery."
+        ],
+        pages: [
+          "AI tools for Fiverr freelancers",
+          "Upwork proposal prompts",
+          "Freelancing tools directory"
+        ]
+      },
+      teacher: {
+        title: "Recommended tools for Teachers",
+        tools: [
+          "Lesson plan generator",
+          "Quiz generator",
+          "Rubric maker",
+          "Lecture notes assistant",
+          "Student feedback writer"
+        ],
+        prompts: [
+          "Create a lesson plan for [topic] for [class level] with objectives, activities and assessment.",
+          "Generate 10 MCQs on [topic] with answer key and difficulty level.",
+          "Create a marking rubric for this assignment: [paste assignment]."
+        ],
+        workflow: [
+          "Define topic, class level and learning outcomes.",
+          "Generate lecture plan, notes and examples.",
+          "Create quiz, rubric and answer key.",
+          "Review content manually before sharing with students."
+        ],
+        pages: [
+          "AI tools for teachers",
+          "Quiz generation prompts",
+          "Lesson plan generator"
+        ]
+      },
+      youtuber: {
+        title: "Recommended tools for YouTubers",
+        tools: [
+          "YouTube title generator",
+          "Script outline generator",
+          "Thumbnail idea generator",
+          "Description generator",
+          "Shorts caption generator"
+        ],
+        prompts: [
+          "Generate 10 YouTube video titles for this topic: [topic].",
+          "Create a YouTube script outline for a 5-minute video on [topic].",
+          "Write a YouTube description with keywords and hashtags for [video topic]."
+        ],
+        workflow: [
+          "Choose a niche and video topic.",
+          "Generate title, outline and hook.",
+          "Create script, thumbnail idea and description.",
+          "Publish video and test titles for better CTR."
+        ],
+        pages: [
+          "AI tools for YouTube beginners",
+          "YouTube script prompts",
+          "Free YouTube title generator"
+        ]
+      },
+      developer: {
+        title: "Recommended tools for Developers",
+        tools: [
+          "Code assistant",
+          "Bug explanation tool",
+          "Documentation generator",
+          "Regex generator",
+          "API testing tool"
+        ],
+        prompts: [
+          "Explain this code and identify possible bugs: [paste code].",
+          "Write clean HTML, CSS and JavaScript for this feature: [feature details].",
+          "Create documentation for this function: [paste function]."
+        ],
+        workflow: [
+          "Define feature requirements clearly.",
+          "Use AI to create first code draft.",
+          "Test manually and fix errors.",
+          "Generate documentation and improve performance."
+        ],
+        pages: [
+          "AI tools for developers",
+          "Coding assistant tools",
+          "Web development tools directory"
+        ]
+      },
+      marketer: {
+        title: "Recommended tools for Marketers",
+        tools: [
+          "Facebook ad copy generator",
+          "SEO title generator",
+          "Meta description generator",
+          "Instagram caption generator",
+          "Content calendar planner"
+        ],
+        prompts: [
+          "Write 5 Facebook ad copies for [product] targeting [audience].",
+          "Generate SEO title and meta description for this keyword: [keyword].",
+          "Create a 7-day social media content plan for [business type]."
+        ],
+        workflow: [
+          "Select product, audience and campaign goal.",
+          "Generate ad copy, captions and content ideas.",
+          "Create SEO titles and meta descriptions.",
+          "Publish, track performance and improve weak content."
+        ],
+        pages: [
+          "AI tools for marketers",
+          "Facebook ads prompt library",
+          "SEO meta title generator"
+        ]
+      }
+    };
+
+    const roleTabs = document.querySelectorAll(".role-tab");
+    const roleTitle = document.getElementById("roleTitle");
+    const roleTools = document.getElementById("roleTools");
+    const rolePrompts = document.getElementById("rolePrompts");
+    const roleWorkflow = document.getElementById("roleWorkflow");
+    const rolePages = document.getElementById("rolePages");
+
+    function renderRole(roleKey) {
+      const data = roleData[roleKey];
+      if (!data) return;
+
+      roleTitle.textContent = data.title;
+
+      roleTools.innerHTML = data.tools
+        .map((tool) => `<li>${tool}</li>`)
+        .join("");
+
+      rolePrompts.innerHTML = data.prompts
+        .map((prompt) => `
+          <div class="prompt-item">
+            <p>${prompt}</p>
+            <button class="copy-prompt-btn" type="button" data-prompt="${prompt.replace(/"/g, "&quot;")}">Copy Prompt</button>
+          </div>
+        `)
+        .join("");
+
+      roleWorkflow.innerHTML = data.workflow
+        .map((step) => `<div class="workflow-step">${step}</div>`)
+        .join("");
+
+      rolePages.innerHTML = data.pages
+        .map((page) => `<li>${page}</li>`)
+        .join("");
+
+      document.querySelectorAll(".copy-prompt-btn").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const prompt = button.getAttribute("data-prompt");
+
+          try {
+            await navigator.clipboard.writeText(prompt);
+            button.textContent = "Copied";
+            setTimeout(() => {
+              button.textContent = "Copy Prompt";
+            }, 1400);
+          } catch (error) {
+            button.textContent = "Copy manually";
+          }
+        });
+      });
+    }
+
+    roleTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        roleTabs.forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
+        renderRole(tab.dataset.role);
+      });
+    });
+
+    renderRole("student");
+
+    const homeSearch = document.getElementById("homeSearch");
+    const homeCards = document.querySelectorAll("#homeToolGrid .tool-card");
+    const homeEmptyState = document.getElementById("homeEmptyState");
+
+    if (homeSearch) {
+      homeSearch.addEventListener("input", () => {
+        const query = homeSearch.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        homeCards.forEach((card) => {
+          const title = card.getAttribute("data-title") || "";
+          const text = card.textContent.toLowerCase();
+          const isVisible = title.includes(query) || text.includes(query);
+
+          card.style.display = isVisible ? "" : "none";
+          if (isVisible) visibleCount++;
+        });
+
+        if (homeEmptyState) {
+          homeEmptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
