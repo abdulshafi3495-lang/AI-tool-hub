@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tools Blog | Guides, Reviews and Tutorials</title>
+<meta name="description" content="Read practical articles about AI tools, SEO, web development, Urdu and English writing, video creation and business automation.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://ai-tools-hub.netlify.app/blog.html" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="navbar container">
+      <a href="index.html" class="brand"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#newsletter" class="nav-cta">Subscribe</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero section-padding-sm blog-hero-panel">
+      <div class="container reveal">
+        <span class="eyebrow">Blog & tutorials</span>
+        <h1>Working articles, AI guides and tool tutorials.</h1>
+        <p>Click any article to read the full post. Search, category filters and Latest Posts are now functional.</p>
+        <div class="hero-actions blog-actions">
+          <button class="btn btn-primary" id="latestPostsBtn" type="button">Latest Posts</button>
+          <a href="contact.html" class="btn btn-outline">Submit Article Idea</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container featured-post reveal" id="featuredBlogPost">
+        <div class="post-cover">AI</div>
+        <div>
+          <span class="badge">Featured</span>
+          <h2 id="featuredTitle">How AI tools reduce operational friction in modern workflows</h2>
+          <p id="featuredSummary">Learn how teams can use AI writing, automation, data analysis and support tools to reduce repetitive tasks.</p>
+          <div class="post-meta" id="featuredMeta"><span>6 min read</span><span>Automation</span><span>Updated 2026</span></div>
+          <button class="btn btn-primary" id="featuredReadBtn" type="button">Read Featured Article</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm blog-control-section" id="blogList">
+      <div class="container reveal">
+        <div class="section-heading blog-heading-row">
+          <div>
+            <span class="eyebrow">Article library</span>
+            <h2>Educational articles</h2>
+          </div>
+          <div class="search-box compact-search blog-search-box">
+            <input type="search" id="blogSearch" placeholder="Search articles..." aria-label="Search articles" />
+            <span>⌕</span>
+          </div>
+        </div>
+
+        <div class="chip-row blog-filter-row" role="list" aria-label="Blog categories">
+          <button class="chip active" data-blog-filter="all" type="button">All</button>
+          <button class="chip" data-blog-filter="web" type="button">Web Dev</button>
+          <button class="chip" data-blog-filter="marketing" type="button">Marketing</button>
+          <button class="chip" data-blog-filter="writing" type="button">English/Urdu</button>
+          <button class="chip" data-blog-filter="video" type="button">Video</button>
+          <button class="chip" data-blog-filter="business" type="button">Business</button>
+          <button class="chip" data-blog-filter="tools" type="button">Tools</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding-sm">
+      <div class="container">
+        <div class="blog-grid enhanced-blog-grid" id="blogGrid"></div>
+        <p class="empty-state" id="blogEmptyState">No articles match your search or selected category.</p>
+      </div>
+    </section>
+
+    <section class="section-padding gradient-section">
+      <div class="container blog-publishing-card reveal">
+        <div>
+          <span class="eyebrow">Posting method</span>
+          <h2>How articles will be posted</h2>
+          <p>This version is static. New posts are added inside the external JavaScript article list. After Firebase is connected, the same page can read articles from Firestore and an admin panel can publish posts without editing code.</p>
+        </div>
+        <div class="publishing-steps">
+          <p><strong>Current:</strong> Add article data in <code>script.js</code>.</p>
+          <p><strong>Next:</strong> Store posts in Firebase Firestore.</p>
+          <p><strong>Admin:</strong> Create login-protected panel for posting articles.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" id="newsletter">
+      <div class="container newsletter-card reveal">
+        <div>
+          <span class="eyebrow">Newsletter</span>
+          <h2>Get AI tool updates</h2>
+          <p>Enter an email to simulate subscription. Firebase can be connected later for real online storage.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="Enter your email" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+          <p class="form-message" id="newsletterMessage"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal article-modal" id="articleModal" aria-hidden="true">
+    <div class="modal-card article-modal-card" role="dialog" aria-modal="true" aria-labelledby="articleModalTitle">
+      <button class="modal-close" id="articleModalClose" aria-label="Close article">×</button>
+      <span class="eyebrow" id="articleModalCategory">Article</span>
+      <h2 id="articleModalTitle">Article Title</h2>
+      <div class="post-meta" id="articleModalMeta"></div>
+      <div class="article-body" id="articleModalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
+      <button class="back-to-top" data-scroll-top>↑ Top</button>
+    </div>
+  </footer>
+
+ <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<!-- Firebase Config -->
+<script src="firebase-config.js"></script>
+
+<!-- Main Website Script -->
+<script src="script.js"></script>
+</body>
+</html>

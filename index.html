@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="AI Tools Hub helps you discover AI tools for web development, digital marketing, writing, video creation, design and productivity.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="canonical" href="https://ai-tools-hub.netlify.app/" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="navbar container">
+      <a href="index.html" class="brand" aria-label="AI Tools Hub Home">
+        <span class="brand-mark">AI</span>
+        <span>AI Tools Hub</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="tools.html" class="nav-cta">Explore Tools</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section section-padding">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <span class="eyebrow">AI automation platform</span>
+          <h1>Build smarter workflows with powerful AI tools.</h1>
+          <p class="hero-description">
+            Discover, compare, and organize AI tools for writing, design, automation, productivity, coding, research and business operations.
+          </p>
+          <div class="hero-actions">
+            <a href="tools.html" class="btn btn-primary">Get Started</a>
+            <a href="categories.html" class="btn btn-outline">View Categories</a>
+          </div>
+          <div class="hero-stats" aria-label="Platform statistics">
+            <div>
+              <strong>120+</strong>
+              <span>Curated tools</span>
+            </div>
+            <div>
+              <strong>18</strong>
+              <span>AI categories</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>Resource access</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="ai-card primary-ai-card">
+            <div class="ai-card-icon">🤖</div>
+            <h3>AI Workflow Assistant</h3>
+            <p>Automate repetitive tasks and reduce manual effort.</p>
+          </div>
+          <div class="mini-card mini-card-top">
+            <strong>93%</strong>
+            <span>Task efficiency</span>
+          </div>
+          <div class="mini-card mini-card-bottom">
+            <strong>4.8/5</strong>
+            <span>User rating</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="search-section section-padding-sm">
+      <div class="container reveal">
+        <div class="section-heading centered">
+          <span class="eyebrow">Quick search</span>
+          <h2>Find an AI tool quickly</h2>
+          <p>Search from the featured tools below.</p>
+        </div>
+        <div class="search-box">
+          <input type="search" id="homeSearch" placeholder="Search AI tools, e.g. chatbot, image, SEO..." aria-label="Search AI tools" />
+          <span>⌕</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Featured tools</span>
+          <h2>Popular AI solutions</h2>
+          <p>Use these cards as your homepage dashboard. You can add real tools later.</p>
+        </div>
+
+        <div class="tool-grid" id="homeToolGrid">
+          <article class="tool-card reveal" data-title="chat ai writing assistant">
+            <div class="tool-icon">💬</div>
+            <h3>Chat AI</h3>
+            <p>Smart conversational assistant for support, content and research.</p>
+            <a href="tools.html" class="text-link">Explore tool</a>
+          </article>
+
+          <article class="tool-card reveal" data-title="image generator design art">
+            <div class="tool-icon">🎨</div>
+            <h3>Image Generator</h3>
+            <p>Create AI images, concepts, mockups and visual assets instantly.</p>
+            <a href="tools.html" class="text-link">Explore tool</a>
+          </article>
+
+          <article class="tool-card reveal" data-title="seo writer content marketing">
+            <div class="tool-icon">📝</div>
+            <h3>SEO Writer</h3>
+            <p>Generate optimized articles, titles, meta descriptions and outlines.</p>
+            <a href="tools.html" class="text-link">Explore tool</a>
+          </article>
+
+          <article class="tool-card reveal" data-title="code assistant programming developer">
+            <div class="tool-icon">💻</div>
+            <h3>Code Assistant</h3>
+            <p>Improve code generation, debugging, documentation and testing.</p>
+            <a href="tools.html" class="text-link">Explore tool</a>
+          </article>
+        </div>
+
+        <p class="empty-state" id="homeEmptyState">No matching tool found.</p>
+      </div>
+    </section>
+
+    <section class="section-padding gradient-section">
+      <div class="container two-column">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Workflow</span>
+          <h2>How AI Tools Hub works</h2>
+          <p>Select a category, compare relevant tools, and apply them to your business or academic workflow.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <span>01</span>
+            <div>
+              <h3>Discover</h3>
+              <p>Browse tools by use case and category.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>02</span>
+            <div>
+              <h3>Compare</h3>
+              <p>Check features, pricing type and ideal usage.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span>03</span>
+            <div>
+              <h3>Implement</h3>
+              <p>Add tools into your workflow and track performance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section-padding">
+      <div class="container cta-card reveal">
+        <div>
+          <span class="eyebrow">Ready to continue?</span>
+          <h2>Complete your pages first, then deploy on Firebase Hosting.</h2>
+          <p>After local testing, this project can be uploaded to Firebase as a static website.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="index.html" class="brand footer-brand"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
+        <p>Modern directory and resource hub for AI tools and automation workflows.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="tools.html">Tools</a>
+        <a href="categories.html">Categories</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="contact.html">Help Center</a>
+        <a href="contact.html">Report Issue</a>
+        <a href="blog.html">Updates</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
+      <button class="back-to-top" data-scroll-top>↑ Top</button>
+    </div>
+  </footer>
+
+ <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+
+<!-- Firebase Config -->
+<script src="firebase-config.js"></script>
+
+<!-- Main Website Script -->
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI tool categories for writing, design, coding, marketing, research and automation." />
+  <title>AI Tools Hub | Categories</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="navbar container">
+      <a href="index.html" class="brand"><span class="brand-mark">AI</span><span>AI Tools Hub</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="categories.html" class="nav-link">Categories</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="tools.html" class="nav-cta">Browse Tools</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero section-padding-sm">
+      <div class="container reveal">
+        <span class="eyebrow">Categories</span>
+        <h1>Organize AI tools by practical use case.</h1>
+        <p>Each category helps users quickly identify the right AI solution for their task.</p>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container category-grid">
+        <article class="category-card reveal">
+          <div class="category-icon">📝</div>
+          <h3>Writing & Content</h3>
+          <p>Blogs, captions, product descriptions, emails and reports.</p>
+          <a href="tools.html" class="text-link">View writing tools</a>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="category-icon">🎨</div>
+          <h3>Design & Images</h3>
+          <p>Images, thumbnails, banners, mockups and creative assets.</p>
+          <a href="tools.html" class="text-link">View design tools</a>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="category-icon">💻</div>
+          <h3>Coding & Development</h3>
+          <p>Code generation, debugging, documentation and testing support.</p>
+          <a href="tools.html" class="text-link">View coding tools</a>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="category-icon">📈</div>
+          <h3>Marketing & SEO</h3>
+          <p>Keyword ideas, SEO outlines, ads, campaigns and analytics.</p>
+          <a href="tools.html" class="text-link">View marketing tools</a>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="category-icon">⚙️</div>
+          <h3>Automation</h3>
+          <p>Workflow automation, task routing and operational efficiency.</p>
+          <a href="tools.html" class="text-link">View automation tools</a>
+        </article>
+
+        <article class="category-card reveal">
+          <div class="category-icon">🔬</div>
+          <h3>Research & Data</h3>
+          <p>Summaries, data analysis, literature review and insights.</p>
+          <a href="tools.html" class="text-link">View research tools</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-padding gradient-section">
+      <div class="container two-column">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Use-case matrix</span>
+          <h2>Recommended AI stack by user type</h2>
+          <p>This section can help visitors understand which tools are suitable for their workflow.</p>
+        </div>
+
+        <div class="matrix-card reveal">
+          <div class="matrix-row matrix-head">
+            <span>User Type</span>
+            <span>Recommended Stack</span>
+          </div>
+          <div class="matrix-row">
+            <span>Student</span>
+            <span>Research + Writing + Notes</span>
+          </div>
+          <div class="matrix-row">
+            <span>Designer</span>
+            <span>Image + Video + Prompt Tools</span>
+          </div>
+          <div class="matrix-row">
+            <span>Business</span>
+            <span>Automation + CRM + Chatbot</span>
+          </div>
+          <div class="matrix-row">
+            <span>Developer</span>
+            <span>Code + Testing + Documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding">
+      <div class="container faq-section reveal">
+        <div class="section-heading centered">
+          <span class="eyebrow">FAQ</span>
+          <h2>Common category questions</h2>
+        </div>
+
+        <div class="accordion">
+          <button class="accordion-btn">Which category should beginners start with?<span>+</span></button>
+          <div class="accordion-content"><p>Start with writing, productivity and research tools because they require less technical setup.</p></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-btn">Can one tool belong to multiple categories?<span>+</span></button>
+          <div class="accordion-content"><p>Yes. A chatbot can be used for writing, customer support, coding and research depending on its features.</p></div>
+        </div>
+        <div class="accordion">
+          <button class="accordion-btn">How should tools be evaluated?<span>+</span></button>
+          <div class="accordion-content"><p>Evaluate accuracy, privacy policy, pricing, integrations, export options and reliability.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> AI Tools Hub. All rights reserved.</p>
+      <button class="back-to-top" data-scroll-top>↑ Top</button>
+    </div>
+  </footer>
+
+ <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
+<!-- Firebase Config -->
+<script src="firebase-config.js"></script>
+
+<!-- Main Website Script -->
+<script src="script.js"></script>
+</body>
+</html>
